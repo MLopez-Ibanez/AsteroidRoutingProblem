@@ -38,7 +38,7 @@ def binary_search_rho(w, ratio_samples_learn, weight_mass_learn,
   pos = int(len(w) * ratio_samples_learn)
   rho_med = (rho_ini + rho_end) / 2
   # If the interval is very narrow, just return the value.
-  if abs(rho_ini - rho_end) < 1E-20:
+  if abs(rho_ini - rho_end) < 1e-20:
     return rho_med
 
   try:
@@ -137,21 +137,21 @@ def UMM(instance, seed, budget, m_ini, eval_ranks, init,
         ws = ws / ws.max()
         co = ws.copy()
         co.sort()
-        #rho = binary_search_rho(co, ratio_samples_learn, weight_mass_learn)
+        rho = binary_search_rho(co, ratio_samples_learn, weight_mass_learn)
         # rho = 1. / len(ws)
         # ws = rankdata(ws, method="min") 
         # print(fitnesses)
         # print(ws)
-        # ws = rho ** ws #MINIMIZE
+        ws = rho ** ws #MINIMIZE
         # print(ws)
         # ws = rho ** (1-ws) #MAXIMIZE
         # print(ws,co[:int(len(co)/4)].sum(),co.sum())
-        rho = 0
-        beta = 1 / 0.001
+        # rho = 0
+        # beta = 1 / 0.001
         #beta = len(ws) / m_ini # smlen
         # Round to avoid numerical instabilities with numbers close to zero.
-        ws = np.round(softmax(-beta * ws), 10) # MINIMIZE
-        inv_sample = sample
+        #ws = np.round(softmax(-beta * ws), 10) # MINIMIZE
+        #inv_sample = sample
         # worst = np.argmax(ws)
         # worst_rev = reverse(sample[worst])
         # inv_sample = sample + [ worst_rev ]  # + [ reverse(p) for p in sample ]
@@ -161,7 +161,7 @@ def UMM(instance, seed, budget, m_ini, eval_ranks, init,
         #ws = softmax(1. / 0.01 * np.hstack((-ws, ws-1))) # MINIMIZE
         #inv_sample = sample + [ reverse(p) for p in sample ]
                 
-        sigma0 = mk.weighted_median(np.array(inv_sample), ws)
+        sigma0 = mk.weighted_median(np.asarray(sample), ws)
         #sigma0 = sample[np.argmin(fitnesses)]
         # FIXME: We do not use phi_estim but it takes a significant amount of time to calculate it.
         #phi_estim = mk.u_phi(inv_sample, sigma0, ws)

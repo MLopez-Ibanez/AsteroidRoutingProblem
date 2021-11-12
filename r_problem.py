@@ -1,6 +1,5 @@
 from rpy2.robjects import FloatVector
 import rpy2.rinterface as ri
-from problem import Problem
 
 # Returns a closure function that can be called from R.
 # WARNING: this function minimizes for CEGO
@@ -12,4 +11,4 @@ def make_r_fitness(self):
         return FloatVector(np.asarray(y))
     return r_fitness
 
-setattr(Problem, "make_r_fitness", make_r_fitness)
+
