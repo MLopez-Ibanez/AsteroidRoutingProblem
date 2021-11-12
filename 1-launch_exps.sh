@@ -4,8 +4,6 @@ set -o pipefail
 
 # Find our own location.
 BINDIR=$(dirname "$(readlink -f "$(type -P $0 || echo $0)")")
-OUTDIR="$HOME/scratch"
-
 # This function launches one job $1 is the job name, the other arguments is the job to submit.
 qsub_job() {
     PARALLEL_ENV=smp.pe
@@ -42,13 +40,15 @@ launch_local() {
     ALGO=$1
     OUTPUT=$2
     shift 2
-    parallel -j 2 --verbose ${BINDIR}/target-runner-${ALGO}.py $ALGO $counter-$$-r{} {} $@ --output ${OUTPUT}-r{} ::: $(seq 1 $nruns)
+    parallel -j $N_LOCAL_CPUS --verbose ${BINDIR}/target-runner-${ALGO}.py $ALGO $counter-$$-r{} {} $@ --output ${OUTPUT}-r{} ::: $(seq 1 $nruns)
 }
 
-nruns=5
-
-LAUNCHER=qsub_job
+OUTDIR="$HOME/scratch"
+N_LOCAL_CPUS=2
+#LAUNCHER=qsub_job
 LAUNCHER=launch_local
+
+nruns=5
 
 INSTANCES="
 arp_10_42
