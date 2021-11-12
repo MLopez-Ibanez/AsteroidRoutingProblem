@@ -41,7 +41,7 @@ slurm_job() {
     OUTPUT=$2
     shift 2
     JOBNAME=${ALGO}-$counter-$$
-    cat <<EOF
+    sbatch <(cat <<EOF
 #!/usr/bin/env bash
 # The name to show in queue lists for this job:
 #SBATCH -J $JOBNAME
@@ -72,6 +72,7 @@ run=\$SLURM_ARRAY_TASK_ID
 echo "running: ${BINDIR}/target-runner-${ALGO}.py $ALGO $counter-$$-r\$run \$run $@ --output ${OUTPUT}-r\$run"
 python3 ${BINDIR}/target-runner-${ALGO}.py $ALGO $counter-$$-r\$run \$run $@ --output "${OUTPUT}-r\$run"
 EOF
+)
 }
 
 launch_local() {
