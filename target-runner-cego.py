@@ -33,7 +33,7 @@ parser.add_argument("--output", type=str, default=None, help="output file")
 parser.add_argument('--m_ini', type=int, default=0, help='m_ini')
 parser.add_argument('--budget', type=int, default=400, help='budget')
 parser.add_argument('--eval_ranks', type=int, default=0, help='eval_ranks')
-parser.add_argument('--distance', choices = ['kendall', 'hamming'], default=None, help='distance')
+parser.add_argument('--distance', choices = ['kendall', 'hamming'], default="kendall", help='distance')
 parser.add_argument('--budgetGA', type=int, default=0, help='budgetGA')
 
 args = parser.parse_args()

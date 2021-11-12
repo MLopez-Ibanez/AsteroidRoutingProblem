@@ -1,7 +1,4 @@
 import numpy as np
-# FIXME: Separate this to a different file so it is optional
-from rpy2.robjects import FloatVector
-import rpy2.rinterface as ri
 
 class Problem:
     def __init__(self, best_sol = None, worst_sol = None, instance_name = None,
@@ -49,12 +46,12 @@ class Problem:
         # return self.n - (perm==np.arange(self.n)).sum()
         return distance(perm, self.best_sol)
     
-    # Returns a closure function that can be called from R.
-    # WARNING: this function minimizes for CEGO
-    def make_r_fitness(self):
-        @ri.rternalize
-        def r_fitness(x):
-            xpy = np.asarray(x) - 1 # R vectors are 1-indexed
-            y = self.fitness(xpy)
-            return FloatVector(np.asarray(y))
-        return r_fitness
+    # # Returns a closure function that can be called from R.
+    # # WARNING: this function minimizes for CEGO
+    # def make_r_fitness(self):
+    #     @ri.rternalize
+    #     def r_fitness(x):
+    #         xpy = np.asarray(x) - 1 # R vectors are 1-indexed
+    #         y = self.fitness(xpy)
+    #         return FloatVector(np.asarray(y))
+    #     return r_fitness

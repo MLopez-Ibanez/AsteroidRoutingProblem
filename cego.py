@@ -15,7 +15,6 @@ numpy2ri.activate()
 import rpy2.rinterface as ri
 
 from r_problem import make_r_fitness
-
 #from mallows_kendall import kendallTau
 # # funcion de distancia entre permutaciones
 # @ri.rternalize
