@@ -36,6 +36,44 @@ ${BINDIR}/target-runner-${ALGO}.py $ALGO $counter-$$-r\$run \$run $@ --output "$
 EOF
 }
 
+slurm_job() {
+    ALGO=$1
+    OUTPUT=$2
+    shift 2
+    JOBNAME=${ALGO}-$counter-$$
+    cat <<EOF
+#!/usr/bin/env bash
+# The name to show in queue lists for this job:
+#SBATCH -J $JOBNAME
+#SBATCH --array=1-$nruns
+# Number of desired cpus:
+#SBATCH --cpus-per-task=$N_LOCAL_CPUS
+
+# Amount of RAM needed for this job:
+#SBATCH --mem=2gb
+
+# The time the job will be running:
+#SBATCH --time=10:00:00
+
+# To use GPUs you have to request them:
+##SBATCH --gres=gpu:1
+#SBATCH --constraint=cal
+
+# Set output and error files
+#SBATCH --error=$OUTDIR/${JOBNAME}_%J.stderr
+#SBATCH --output=$OUTDIR/${JOBNAME}_%J.stdout
+
+# To load some software (you can show the list with 'module avail'):
+module load R/4.1.0_sin
+module load python/3.8.8
+export R_LIBS="$HOME/asteroides/R_packages"
+
+run=\$SLURM_ARRAY_TASK_ID
+echo "running: ${BINDIR}/target-runner-${ALGO}.py $ALGO $counter-$$-r\$run \$run $@ --output ${OUTPUT}-r\$run"
+python3 ${BINDIR}/target-runner-${ALGO}.py $ALGO $counter-$$-r\$run \$run $@ --output "${OUTPUT}-r\$run"
+EOF
+}
+
 launch_local() {
     ALGO=$1
     OUTPUT=$2
@@ -43,10 +81,11 @@ launch_local() {
     parallel -j $N_LOCAL_CPUS --verbose ${BINDIR}/target-runner-${ALGO}.py $ALGO $counter-$$-r{} {} $@ --output ${OUTPUT}-r{} ::: $(seq 1 $nruns)
 }
 
-OUTDIR="$HOME/scratch"
+OUTDIR="$SCRATCH/asteroides"
 N_LOCAL_CPUS=2
 #LAUNCHER=qsub_job
-LAUNCHER=launch_local
+#LAUNCHER=launch_local
+LAUNCHER=slurm_job
 
 nruns=5
 
