@@ -1,0 +1,420 @@
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+slurmstepd: error: *** JOB 434641 ON sd009 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434664 ON sd009 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434665 ON sd009 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434666 ON sd009 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434667 ON sd009 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434643 ON sd058 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434672 ON sd058 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434673 ON sd058 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434674 ON sd058 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434675 ON sd058 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434645 ON sd059 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434680 ON sd059 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434681 ON sd059 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434682 ON sd059 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434683 ON sd059 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434647 ON sd059 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434688 ON sd059 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434689 ON sd059 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434690 ON sd059 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434691 ON sd059 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434649 ON sd059 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434696 ON sd059 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434697 ON sd059 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434698 ON sd059 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434699 ON sd059 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434651 ON sd005 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434704 ON sd005 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434705 ON sd005 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434706 ON sd005 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434707 ON sd005 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+slurmstepd: error: *** JOB 434653 ON sd005 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434712 ON sd005 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434713 ON sd005 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434714 ON sd005 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434715 ON sd005 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434655 ON sd006 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434720 ON sd006 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434721 ON sd006 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434722 ON sd006 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434723 ON sd006 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434657 ON sd006 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434728 ON sd006 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434729 ON sd006 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434730 ON sd006 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434731 ON sd006 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434659 ON sd006 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434736 ON sd006 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434737 ON sd006 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434738 ON sd006 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434739 ON sd006 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434661 ON sd078 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434744 ON sd079 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434745 ON sd079 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434746 ON sd078 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434747 ON sd078 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434663 ON sd078 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434752 ON sd078 CANCELLED AT 2021-11-13T06:25:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434753 ON sd078 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434754 ON sd078 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 434755 ON sd078 CANCELLED AT 2021-11-13T06:25:21 DUE TO TIME LIMIT ***
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+/mnt/home/users/lcc_neo/chicano/.local/lib/python3.8/site-packages/scipy/optimize/optimize.py:282: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "

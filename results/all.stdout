@@ -1,0 +1,420 @@
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 10-96112-r5 5 arp_10_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_10_42/cego-r5
+368.8867028344358
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 10-96112-r1 1 arp_10_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_10_42/cego-r1
+354.08095630263966
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 10-96112-r2 2 arp_10_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_10_42/cego-r2
+367.89899299424576
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 10-96112-r3 3 arp_10_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_10_42/cego-r3
+374.33890907487586
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 10-96112-r4 4 arp_10_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_10_42/cego-r4
+394.1789664466522
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 11-96112-r5 5 arp_15_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_15_42/cego-r5
+609.7509202782126
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 11-96112-r1 1 arp_15_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_15_42/cego-r1
+590.786954333847
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 11-96112-r2 2 arp_15_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_15_42/cego-r2
+608.9303041320156
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 11-96112-r3 3 arp_15_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_15_42/cego-r3
+666.7650338478601
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 11-96112-r4 4 arp_15_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_15_42/cego-r4
+583.5791374940504
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 12-96112-r5 5 arp_20_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_20_42/cego-r5
+817.017569452258
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 12-96112-r1 1 arp_20_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_20_42/cego-r1
+896.6025094665208
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 12-96112-r2 2 arp_20_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_20_42/cego-r2
+816.3565250758758
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 12-96112-r3 3 arp_20_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_20_42/cego-r3
+875.7600059408093
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 12-96112-r4 4 arp_20_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_20_42/cego-r4
+764.6204768233401
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 13-96112-r5 5 arp_10_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_10_42/cego-r5
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 13-96112-r1 1 arp_10_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_10_42/cego-r1
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 13-96112-r2 2 arp_10_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_10_42/cego-r2
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 13-96112-r3 3 arp_10_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_10_42/cego-r3
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 13-96112-r4 4 arp_10_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_10_42/cego-r4
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 14-96112-r5 5 arp_15_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_15_42/cego-r5
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 14-96112-r1 1 arp_15_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_15_42/cego-r1
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 14-96112-r2 2 arp_15_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_15_42/cego-r2
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 14-96112-r3 3 arp_15_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_15_42/cego-r3
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 14-96112-r4 4 arp_15_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_15_42/cego-r4
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 15-96112-r5 5 arp_20_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_20_42/cego-r5
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 15-96112-r1 1 arp_20_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_20_42/cego-r1
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 15-96112-r2 2 arp_20_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_20_42/cego-r2
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 15-96112-r3 3 arp_20_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_20_42/cego-r3
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 15-96112-r4 4 arp_20_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_20_42/cego-r4
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 16-96112-r5 5 arp_10_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_10_42/cego-r5
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 16-96112-r1 1 arp_10_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_10_42/cego-r1
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 16-96112-r2 2 arp_10_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_10_42/cego-r2
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 16-96112-r3 3 arp_10_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_10_42/cego-r3
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 16-96112-r4 4 arp_10_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_10_42/cego-r4
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 17-96112-r5 5 arp_15_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_15_42/cego-r5
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 17-96112-r1 1 arp_15_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_15_42/cego-r1
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 17-96112-r2 2 arp_15_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_15_42/cego-r2
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 17-96112-r3 3 arp_15_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_15_42/cego-r3
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 17-96112-r4 4 arp_15_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_15_42/cego-r4
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 18-96112-r5 5 arp_20_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_20_42/cego-r5
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 18-96112-r1 1 arp_20_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_20_42/cego-r1
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 18-96112-r2 2 arp_20_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_20_42/cego-r2
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 18-96112-r3 3 arp_20_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_20_42/cego-r3
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 18-96112-r4 4 arp_20_42 --m_ini 10 --budgetGA 4 --budget 500 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_20_42/cego-r4
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 1-96112-r5 5 arp_10_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_10_42/cego-r5
+414.7882669217923
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 1-96112-r1 1 arp_10_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_10_42/cego-r1
+418.9748267045714
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 1-96112-r2 2 arp_10_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_10_42/cego-r2
+407.8650994556875
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 1-96112-r3 3 arp_10_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_10_42/cego-r3
+427.8331566302382
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 1-96112-r4 4 arp_10_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_10_42/cego-r4
+403.36444151048784
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 19-96112-r5 5 arp_10_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_10_42/cego-r5
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 19-96112-r1 1 arp_10_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_10_42/cego-r1
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 19-96112-r2 2 arp_10_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_10_42/cego-r2
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 19-96112-r3 3 arp_10_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_10_42/cego-r3
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 19-96112-r4 4 arp_10_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_10_42/cego-r4
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 20-96112-r5 5 arp_15_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_15_42/cego-r5
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 20-96112-r1 1 arp_15_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_15_42/cego-r1
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 20-96112-r2 2 arp_15_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_15_42/cego-r2
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 20-96112-r3 3 arp_15_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_15_42/cego-r3
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 20-96112-r4 4 arp_15_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_15_42/cego-r4
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 21-96112-r5 5 arp_20_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_20_42/cego-r5
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 21-96112-r1 1 arp_20_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_20_42/cego-r1
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 21-96112-r2 2 arp_20_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_20_42/cego-r2
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 21-96112-r3 3 arp_20_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_20_42/cego-r3
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 21-96112-r4 4 arp_20_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_20_42/cego-r4
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 22-96112-r5 5 arp_10_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_10_42/cego-r5
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 22-96112-r1 1 arp_10_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_10_42/cego-r1
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 22-96112-r2 2 arp_10_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_10_42/cego-r2
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 22-96112-r3 3 arp_10_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_10_42/cego-r3
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 22-96112-r4 4 arp_10_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_10_42/cego-r4
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 23-96112-r5 5 arp_15_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_15_42/cego-r5
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 23-96112-r1 1 arp_15_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_15_42/cego-r1
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 23-96112-r2 2 arp_15_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_15_42/cego-r2
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 23-96112-r3 3 arp_15_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_15_42/cego-r3
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 23-96112-r4 4 arp_15_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_15_42/cego-r4
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 24-96112-r5 5 arp_20_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_20_42/cego-r5
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 24-96112-r1 1 arp_20_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_20_42/cego-r1
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 24-96112-r2 2 arp_20_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_20_42/cego-r2
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 24-96112-r3 3 arp_20_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_20_42/cego-r3
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 24-96112-r4 4 arp_20_42 --m_ini 10 --budgetGA 4 --budget 1000 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_20_42/cego-r4
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 2-96112-r5 5 arp_15_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_15_42/cego-r5
+602.3592352809544
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 2-96112-r1 1 arp_15_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_15_42/cego-r1
+604.9938134056256
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 2-96112-r2 2 arp_15_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_15_42/cego-r2
+610.433419586444
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 2-96112-r3 3 arp_15_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_15_42/cego-r3
+699.9053742299644
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 2-96112-r4 4 arp_15_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_15_42/cego-r4
+656.9138274809608
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 3-96112-r5 5 arp_20_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_20_42/cego-r5
+890.3583463732871
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 3-96112-r1 1 arp_20_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_20_42/cego-r1
+900.9284309017567
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 3-96112-r2 2 arp_20_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_20_42/cego-r2
+888.2726782163887
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 3-96112-r3 3 arp_20_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_20_42/cego-r3
+805.7151750232871
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 3-96112-r4 4 arp_20_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_20_42/cego-r4
+892.2847367630909
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 4-96112-r5 5 arp_10_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_10_42/cego-r5
+368.8867028344358
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 4-96112-r1 1 arp_10_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_10_42/cego-r1
+397.72548822775764
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 4-96112-r2 2 arp_10_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_10_42/cego-r2
+367.89899299424576
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 4-96112-r3 3 arp_10_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_10_42/cego-r3
+423.8446896799877
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 4-96112-r4 4 arp_10_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_10_42/cego-r4
+401.6369339982138
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 5-96112-r5 5 arp_15_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_15_42/cego-r5
+659.3025132011757
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 5-96112-r1 1 arp_15_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_15_42/cego-r1
+607.0756482696867
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 5-96112-r2 2 arp_15_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_15_42/cego-r2
+610.3430392849887
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 5-96112-r3 3 arp_15_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_15_42/cego-r3
+666.9637849275774
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 5-96112-r4 4 arp_15_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_15_42/cego-r4
+654.9921540684137
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 6-96112-r5 5 arp_20_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_20_42/cego-r5
+896.1734101179146
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 6-96112-r1 1 arp_20_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_20_42/cego-r1
+915.3298086901383
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 6-96112-r2 2 arp_20_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_20_42/cego-r2
+874.7373587153254
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 6-96112-r3 3 arp_20_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_20_42/cego-r3
+910.1702769299488
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 6-96112-r4 4 arp_20_42 --m_ini 10 --budgetGA 4 --budget 100 --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_20_42/cego-r4
+766.702197548366
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 7-96112-r5 5 arp_10_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_10_42/cego-r5
+361.9468297304884
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 7-96112-r1 1 arp_10_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_10_42/cego-r1
+404.8662615959641
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 7-96112-r2 2 arp_10_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_10_42/cego-r2
+407.8650994556875
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 7-96112-r3 3 arp_10_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_10_42/cego-r3
+406.7166367129874
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 7-96112-r4 4 arp_10_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_10_42/cego-r4
+403.36444151048784
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 8-96112-r5 5 arp_15_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_15_42/cego-r5
+563.3387361940707
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 8-96112-r1 1 arp_15_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_15_42/cego-r1
+604.9938134056256
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 8-96112-r2 2 arp_15_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_15_42/cego-r2
+607.9801672152922
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 8-96112-r3 3 arp_15_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_15_42/cego-r3
+650.2371912511215
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 8-96112-r4 4 arp_15_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_15_42/cego-r4
+655.3441134475153
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 9-96112-r5 5 arp_20_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_20_42/cego-r5
+890.3583463732871
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 9-96112-r1 1 arp_20_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_20_42/cego-r1
+847.5478332626999
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 9-96112-r2 2 arp_20_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_20_42/cego-r2
+880.2667889945118
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 9-96112-r3 3 arp_20_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_20_42/cego-r3
+794.3276097079217
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-cego.py cego 9-96112-r4 4 arp_20_42 --m_ini 10 --budgetGA 4 --budget 200 --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_20_42/cego-r4
+857.2634533178971
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 10-96112-r5 5 arp_10_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_10_42/umm-maxmindist-r5
+420.3984325806196
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 10-96112-r1 1 arp_10_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_10_42/umm-maxmindist-r1
+394.3518259342154
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 10-96112-r2 2 arp_10_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_10_42/umm-maxmindist-r2
+448.6174391374126
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 10-96112-r3 3 arp_10_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_10_42/umm-maxmindist-r3
+394.935275297703
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 10-96112-r4 4 arp_10_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_10_42/umm-maxmindist-r4
+404.4777364833951
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 11-96112-r5 5 arp_15_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_15_42/umm-maxmindist-r5
+608.5121864557824
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 11-96112-r1 1 arp_15_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_15_42/umm-maxmindist-r1
+631.69921806538
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 11-96112-r2 2 arp_15_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_15_42/umm-maxmindist-r2
+655.7353096968397
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 11-96112-r3 3 arp_15_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_15_42/umm-maxmindist-r3
+634.2364986664855
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 11-96112-r4 4 arp_15_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_15_42/umm-maxmindist-r4
+643.5589996561672
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 12-96112-r5 5 arp_20_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_20_42/umm-maxmindist-r5
+852.7347178822608
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 12-96112-r1 1 arp_20_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_20_42/umm-maxmindist-r1
+873.4551217570149
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 12-96112-r2 2 arp_20_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_20_42/umm-maxmindist-r2
+873.6650774365011
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 12-96112-r3 3 arp_20_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_20_42/umm-maxmindist-r3
+879.512101069697
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 12-96112-r4 4 arp_20_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er1/arp_20_42/umm-maxmindist-r4
+875.9494859481333
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 13-96112-r5 5 arp_10_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_10_42/umm-maxmindist-r5
+386.94138011853516
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 13-96112-r1 1 arp_10_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_10_42/umm-maxmindist-r1
+369.52906357780984
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 13-96112-r2 2 arp_10_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_10_42/umm-maxmindist-r2
+401.3521425048089
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 13-96112-r3 3 arp_10_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_10_42/umm-maxmindist-r3
+367.89899299424576
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 13-96112-r4 4 arp_10_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_10_42/umm-maxmindist-r4
+368.26933934861984
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 14-96112-r5 5 arp_15_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_15_42/umm-maxmindist-r5
+547.9406381979861
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 14-96112-r1 1 arp_15_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_15_42/umm-maxmindist-r1
+619.1915891448557
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 14-96112-r2 2 arp_15_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_15_42/umm-maxmindist-r2
+593.529775685547
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 14-96112-r3 3 arp_15_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_15_42/umm-maxmindist-r3
+577.1326669241033
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 14-96112-r4 4 arp_15_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_15_42/umm-maxmindist-r4
+627.9259817362642
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 15-96112-r5 5 arp_20_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_20_42/umm-maxmindist-r5
+799.4093675705599
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 15-96112-r1 1 arp_20_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_20_42/umm-maxmindist-r1
+865.6388121223566
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 15-96112-r2 2 arp_20_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_20_42/umm-maxmindist-r2
+855.7426553084163
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 15-96112-r3 3 arp_20_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_20_42/umm-maxmindist-r3
+766.1809756828333
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 15-96112-r4 4 arp_20_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er0/arp_20_42/umm-maxmindist-r4
+818.7756297723151
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 16-96112-r5 5 arp_10_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_10_42/umm-maxmindist-r5
+411.6399355186462
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 16-96112-r1 1 arp_10_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_10_42/umm-maxmindist-r1
+374.75364863232835
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 16-96112-r2 2 arp_10_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_10_42/umm-maxmindist-r2
+386.63052450726013
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 16-96112-r3 3 arp_10_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_10_42/umm-maxmindist-r3
+405.7269516843821
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 16-96112-r4 4 arp_10_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_10_42/umm-maxmindist-r4
+390.40710475176775
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 17-96112-r5 5 arp_15_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_15_42/umm-maxmindist-r5
+608.5121864557824
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 17-96112-r1 1 arp_15_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_15_42/umm-maxmindist-r1
+621.1735950442755
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 17-96112-r2 2 arp_15_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_15_42/umm-maxmindist-r2
+661.2791969147556
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 17-96112-r3 3 arp_15_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_15_42/umm-maxmindist-r3
+575.4107985662674
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 17-96112-r4 4 arp_15_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_15_42/umm-maxmindist-r4
+625.4814863038154
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 18-96112-r5 5 arp_20_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_20_42/umm-maxmindist-r5
+867.7690543973667
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 18-96112-r1 1 arp_20_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_20_42/umm-maxmindist-r1
+846.4200463203475
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 18-96112-r2 2 arp_20_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_20_42/umm-maxmindist-r2
+869.0978419200235
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 18-96112-r3 3 arp_20_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_20_42/umm-maxmindist-r3
+786.0559782159226
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 18-96112-r4 4 arp_20_42 --m_ini 10 --budget 500 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m500-er1/arp_20_42/umm-maxmindist-r4
+884.1683551328889
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 1-96112-r5 5 arp_10_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_10_42/umm-maxmindist-r5
+410.60257446309663
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 1-96112-r1 1 arp_10_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_10_42/umm-maxmindist-r1
+409.44234663892524
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 1-96112-r2 2 arp_10_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_10_42/umm-maxmindist-r2
+393.6317178991588
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 1-96112-r3 3 arp_10_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_10_42/umm-maxmindist-r3
+425.71911325393626
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 1-96112-r4 4 arp_10_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_10_42/umm-maxmindist-r4
+406.0178144262483
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 19-96112-r5 5 arp_10_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_10_42/umm-maxmindist-r5
+386.94138011853516
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 19-96112-r1 1 arp_10_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_10_42/umm-maxmindist-r1
+368.62830597078425
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 19-96112-r2 2 arp_10_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_10_42/umm-maxmindist-r2
+378.50097322640136
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 19-96112-r3 3 arp_10_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_10_42/umm-maxmindist-r3
+385.0038207624462
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 19-96112-r4 4 arp_10_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_10_42/umm-maxmindist-r4
+374.33890907487586
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 20-96112-r5 5 arp_15_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_15_42/umm-maxmindist-r5
+536.8396979564185
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 20-96112-r1 1 arp_15_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_15_42/umm-maxmindist-r1
+563.9163174081693
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 20-96112-r2 2 arp_15_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_15_42/umm-maxmindist-r2
+581.5700721061519
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 20-96112-r3 3 arp_15_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_15_42/umm-maxmindist-r3
+607.4592454867758
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 20-96112-r4 4 arp_15_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_15_42/umm-maxmindist-r4
+590.5463650906072
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 21-96112-r5 5 arp_20_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_20_42/umm-maxmindist-r5
+828.4839768462668
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 21-96112-r1 1 arp_20_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_20_42/umm-maxmindist-r1
+815.084423055506
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 21-96112-r2 2 arp_20_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_20_42/umm-maxmindist-r2
+785.8173087000905
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 21-96112-r3 3 arp_20_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_20_42/umm-maxmindist-r3
+842.4146519103551
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 21-96112-r4 4 arp_20_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er0/arp_20_42/umm-maxmindist-r4
+858.3963000054514
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 22-96112-r5 5 arp_10_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_10_42/umm-maxmindist-r5
+387.4248810268804
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 22-96112-r1 1 arp_10_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_10_42/umm-maxmindist-r1
+378.13913217397595
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 22-96112-r2 2 arp_10_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_10_42/umm-maxmindist-r2
+395.5710194377214
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 22-96112-r3 3 arp_10_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_10_42/umm-maxmindist-r3
+374.75364863232835
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 22-96112-r4 4 arp_10_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_10_42/umm-maxmindist-r4
+364.4167664167351
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 23-96112-r5 5 arp_15_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_15_42/umm-maxmindist-r5
+608.5121864557824
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 23-96112-r1 1 arp_15_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_15_42/umm-maxmindist-r1
+587.1801123136679
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 23-96112-r2 2 arp_15_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_15_42/umm-maxmindist-r2
+604.6481374242908
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 23-96112-r3 3 arp_15_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_15_42/umm-maxmindist-r3
+582.554770045033
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 23-96112-r4 4 arp_15_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_15_42/umm-maxmindist-r4
+612.9311052983267
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 24-96112-r5 5 arp_20_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_20_42/umm-maxmindist-r5
+849.0871951372939
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 24-96112-r1 1 arp_20_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_20_42/umm-maxmindist-r1
+859.134953197165
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 24-96112-r2 2 arp_20_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_20_42/umm-maxmindist-r2
+869.0482388641075
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 24-96112-r3 3 arp_20_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_20_42/umm-maxmindist-r3
+827.1653501792441
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 24-96112-r4 4 arp_20_42 --m_ini 10 --budget 1000 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m1000-er1/arp_20_42/umm-maxmindist-r4
+857.2652392547104
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 2-96112-r5 5 arp_15_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_15_42/umm-maxmindist-r5
+655.3197861335101
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 2-96112-r1 1 arp_15_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_15_42/umm-maxmindist-r1
+611.5080778310943
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 2-96112-r2 2 arp_15_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_15_42/umm-maxmindist-r2
+642.740410700938
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 2-96112-r3 3 arp_15_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_15_42/umm-maxmindist-r3
+624.5624368720134
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 2-96112-r4 4 arp_15_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_15_42/umm-maxmindist-r4
+622.1746211438931
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 3-96112-r5 5 arp_20_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_20_42/umm-maxmindist-r5
+812.2541871521953
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 3-96112-r1 1 arp_20_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_20_42/umm-maxmindist-r1
+862.8518188544161
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 3-96112-r2 2 arp_20_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_20_42/umm-maxmindist-r2
+890.5651381978954
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 3-96112-r3 3 arp_20_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_20_42/umm-maxmindist-r3
+846.7592572632465
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 3-96112-r4 4 arp_20_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er0/arp_20_42/umm-maxmindist-r4
+880.9225020703396
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 4-96112-r5 5 arp_10_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_10_42/umm-maxmindist-r5
+425.85366304038433
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 4-96112-r1 1 arp_10_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_10_42/umm-maxmindist-r1
+395.61477961750575
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 4-96112-r2 2 arp_10_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_10_42/umm-maxmindist-r2
+437.6364653992891
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 4-96112-r3 3 arp_10_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_10_42/umm-maxmindist-r3
+424.5597503410465
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 4-96112-r4 4 arp_10_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_10_42/umm-maxmindist-r4
+409.42804863120773
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 5-96112-r5 5 arp_15_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_15_42/umm-maxmindist-r5
+641.5292427686617
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 5-96112-r1 1 arp_15_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_15_42/umm-maxmindist-r1
+666.4556100285807
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 5-96112-r2 2 arp_15_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_15_42/umm-maxmindist-r2
+641.7725294443288
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 5-96112-r3 3 arp_15_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_15_42/umm-maxmindist-r3
+586.9182459161824
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 5-96112-r4 4 arp_15_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_15_42/umm-maxmindist-r4
+641.2289312224875
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 6-96112-r5 5 arp_20_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_20_42/umm-maxmindist-r5
+886.4793224642127
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 6-96112-r1 1 arp_20_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_20_42/umm-maxmindist-r1
+887.6014168267902
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 6-96112-r2 2 arp_20_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_20_42/umm-maxmindist-r2
+881.860609526997
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 6-96112-r3 3 arp_20_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_20_42/umm-maxmindist-r3
+884.6092255411417
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 6-96112-r4 4 arp_20_42 --m_ini 10 --budget 100 --init maxmindist --eval_ranks 1 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m100-er1/arp_20_42/umm-maxmindist-r4
+872.9630444480374
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 7-96112-r5 5 arp_10_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_10_42/umm-maxmindist-r5
+402.90518050575815
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 7-96112-r1 1 arp_10_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_10_42/umm-maxmindist-r1
+368.62830597078425
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 7-96112-r2 2 arp_10_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_10_42/umm-maxmindist-r2
+393.6317178991588
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 7-96112-r3 3 arp_10_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_10_42/umm-maxmindist-r3
+416.4602256312064
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 7-96112-r4 4 arp_10_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_10_42/umm-maxmindist-r4
+368.1867714766145
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 8-96112-r5 5 arp_15_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_15_42/umm-maxmindist-r5
+577.7848299331091
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 8-96112-r1 1 arp_15_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_15_42/umm-maxmindist-r1
+636.3516115421063
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 8-96112-r2 2 arp_15_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_15_42/umm-maxmindist-r2
+651.1642515018631
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 8-96112-r3 3 arp_15_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_15_42/umm-maxmindist-r3
+624.5624368720134
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 8-96112-r4 4 arp_15_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_15_42/umm-maxmindist-r4
+607.6188129446989
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 9-96112-r5 5 arp_20_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_20_42/umm-maxmindist-r5
+809.668386643014
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 9-96112-r1 1 arp_20_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_20_42/umm-maxmindist-r1
+857.0875902109543
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 9-96112-r2 2 arp_20_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_20_42/umm-maxmindist-r2
+890.072123578675
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 9-96112-r3 3 arp_20_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_20_42/umm-maxmindist-r3
+871.8923767449348
+running: /mnt/home/users/lcc_neo/chicano/AsteroidRoutingProblem/target-runner-umm.py umm 9-96112-r4 4 arp_20_42 --m_ini 10 --budget 200 --init maxmindist --eval_ranks 0 --output /mnt/scratch/users/lcc_neo/chicano/asteroides/results/m200-er0/arp_20_42/umm-maxmindist-r4
+858.7798045494359
