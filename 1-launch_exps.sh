@@ -84,13 +84,13 @@ launch_local() {
 }
 
 #LAUNCHER=qsub_job
-#OUTDIR="$SCRATCH/asteroides"
+OUTDIR="$SCRATCH/asteroides"
 N_SLURM_CPUS=4
-#LAUNCHER=slurm_job
+LAUNCHER=slurm_job
 
-OUTDIR="./"
+#OUTDIR="./"
 N_LOCAL_CPUS=4
-LAUNCHER=launch_local
+#LAUNCHER=launch_local
 
 nruns=5
 
@@ -102,7 +102,7 @@ arp_20_42
 # Filter out
 INSTANCES=$(echo "$INSTANCES" | grep -v '#' | tr '\n' ' ')
 
-budget="500 1000"
+budget="100 200 500 1000"
 eval_ranks="0 1"
 # eval_ranks=1
 #eval_ranks=0
