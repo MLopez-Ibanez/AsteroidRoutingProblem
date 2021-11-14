@@ -53,7 +53,7 @@ slurm_job() {
 #SBATCH --mem=2gb
 
 # The time the job will be running:
-#SBATCH --time=10:00:00
+#SBATCH --time=50:00:00
 
 # To use GPUs you have to request them:
 ##SBATCH --gres=gpu:1
@@ -98,7 +98,7 @@ arp_20_42
 # Filter out
 INSTANCES=$(echo "$INSTANCES" | grep -v '#' | tr '\n' ' ')
 
-budget="100 200 500 1000"
+budget="500 1000"
 eval_ranks="0 1"
 # eval_ranks=1
 #eval_ranks=0
@@ -122,7 +122,7 @@ for instance in $INSTANCES; do
     RESULTS="$OUTDIR/results/m${m}-er${er}/$instance"
     mkdir -p "$RESULTS"
     #-learn_${learning}-samp_${sampling}"
-    $LAUNCHER umm "${RESULTS}/umm-${init}" $instance --m_ini $m_ini --budget $m --init $init --eval_ranks $er 
+    #$LAUNCHER umm "${RESULTS}/umm-${init}" $instance --m_ini $m_ini --budget $m --init $init --eval_ranks $er 
     #--learning $learning --sampling $sampling --distance $distance
     $LAUNCHER cego "${RESULTS}/cego" $instance --m_ini $m_ini --budgetGA $budgetGA --budget $m --eval_ranks $er
 done
