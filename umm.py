@@ -5,18 +5,13 @@ from scipy.spatial import distance
 from scipy.stats import rankdata
 import pandas as pd
 
-def reverse(x): return np.flip(x)
+def reverse(x): return x[::-1]
 
 def is_duplicated(perm, sample):
   for p in sample:
     if np.array_equal(perm, p):
       return True
   return False
-
-def remove_duplicates(s):
-  d = {a.tostring(): a for a in s}
-  return list(d.values())
-
 
 # Requires scipy 1.2.0
 # from scipy.special import softmax
