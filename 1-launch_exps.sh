@@ -88,21 +88,28 @@ OUTDIR="$SCRATCH/asteroides"
 N_SLURM_CPUS=4
 LAUNCHER=slurm_job
 
-#OUTDIR="./"
-N_LOCAL_CPUS=4
-#LAUNCHER=launch_local
+# OUTDIR="./"
+# N_LOCAL_CPUS=4
+# LAUNCHER=launch_local
 
-nruns=5
+nruns=30
 
-INSTANCES="
-arp_10_42
-arp_15_42
-arp_20_42
-"
+INSTANCES=""
+for n in $(seq 10 5 30); do
+    for seed in "42 73"; do
+        INSTANCES="$INSTANCES arp_${n}_${seed}"
+    done
+done
+# INSTANCES="
+# arp_10_42
+# arp_15_42
+# arp_20_42
+# "
 # Filter out
 INSTANCES=$(echo "$INSTANCES" | grep -v '#' | tr '\n' ' ')
 
-budget="100 200 500 1000"
+#budget="100 200 500 1000"
+budget="400"
 eval_ranks="0 1"
 # eval_ranks=1
 #eval_ranks=0
@@ -126,9 +133,9 @@ for instance in $INSTANCES; do
     RESULTS="$OUTDIR/results/m${m}-er${er}/$instance"
     mkdir -p "$RESULTS"
     #-learn_${learning}-samp_${sampling}"
-    $LAUNCHER umm "${RESULTS}/umm2-${init}" $instance --m_ini $m_ini --budget $m --init $init --eval_ranks $er 
+    $LAUNCHER umm "${RESULTS}/umm-${init}" $instance --m_ini $m_ini --budget $m --init $init --eval_ranks $er 
     #--learning $learning --sampling $sampling --distance $distance
-    # $LAUNCHER cego "${RESULTS}/cego" $instance --m_ini $m_ini --budgetGA $budgetGA --budget $m --eval_ranks $er
+    $LAUNCHER cego "${RESULTS}/cego" $instance --m_ini $m_ini --budgetGA $budgetGA --budget $m --eval_ranks $er
 done
 done
 done
