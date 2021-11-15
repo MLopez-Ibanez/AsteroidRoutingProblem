@@ -101,7 +101,7 @@ def design_maxmindist(m, n, distance, budget = 1000):
 
   
 def UMM(instance, seed, budget, m_ini, eval_ranks, init,
-        ratio_samples_learn = 0.01, weight_mass_learn = 0.99):
+        ratio_samples_learn = 0.1, weight_mass_learn = 0.9):
 
     np.random.seed(seed)
     if eval_ranks: # If True, the objective function works with ranks
@@ -125,32 +125,32 @@ def UMM(instance, seed, budget, m_ini, eval_ranks, init,
     res = [ [np.nan, np.nan, np.nan,
              instance.distance_to_best(perm, mk.distance)] for perm in sample]
 
-    neighborhood = 1
+    #neighborhood = 1
     for m in range(budget - m_ini):
         ws = np.asarray(fitnesses).copy()
-        if neighborhood == 1: # Fast process the common case
-          best_idx = np.argmin(ws)
-          ws[:] = 0.
-          ws[best_idx] = 1.
-        else:
-          ws = 1. / rankdata(ws, method="min")
-          ws[(-ws).argsort()[neighborhood:]] = 0.0
-          print(f'fitnesses: {fitnesses}')
-          print(f'ws       : {ws}')
-          ws /= ws.sum()
-        rho = np.nan
+        # if neighborhood == 1: # Fast process the common case
+        #   best_idx = np.argmin(ws)
+        #   ws[:] = 0.
+        #   ws[best_idx] = 1.
+        # else:
+        #   ws = 1. / rankdata(ws, method="min")
+        #   ws[(-ws).argsort()[neighborhood:]] = 0.0
+        #   print(f'fitnesses: {fitnesses}')
+        #   print(f'ws       : {ws}')
+        #   ws /= ws.sum()
+        # rho = np.nan
         # FIXME: For maximization, this need to be changed.
-        #ws = ws - ws.min()
+        ws = ws - ws.min()
         # FIXME: Handle if ws.max() == 0.
-        #ws = ws / ws.max()
-        #co = ws.copy()
-        #co.sort()
-        # rho = binary_search_rho(co, ratio_samples_learn, weight_mass_learn)
+        ws = ws / ws.max()
+        co = ws.copy()
+        co.sort()
+        rho = binary_search_rho(co, ratio_samples_learn, weight_mass_learn)
         # rho = 1. / len(ws)
         # ws = rankdata(ws, method="min") 
         # print(fitnesses)
         # print(ws)
-        #ws = rho ** ws #MINIMIZE
+        ws = rho ** ws #MINIMIZE
         # print(ws)
         # ws = rho ** (1-ws) #MAXIMIZE
         # print(ws,co[:int(len(co)/4)].sum(),co.sum())
@@ -171,11 +171,11 @@ def UMM(instance, seed, budget, m_ini, eval_ranks, init,
                 
         sigma0 = mk.weighted_median(np.asarray(sample), ws)
         #sigma0 = sample[np.argmin(fitnesses)]
-        # FIXME: We do not use phi_estim but it takes a significant amount of time to calculate it.
         #phi_estim = mk.u_phi(inv_sample, sigma0, ws)
+        # FIXME: We do not use phi_estim but it takes a significant amount of time to calculate it.
         phi_estim = np.nan
-        #expected_dist = get_expected_distance(m, n, budget)
-        expected_dist = 0
+        expected_dist = get_expected_distance(m, n, budget)
+        #expected_dist = 0
         phi_sample = mk.find_phi(n, expected_dist, expected_dist + 1)
         while True:
             perm = mk.sample(1, n, phi=phi_sample, s0 = sigma0)
@@ -194,11 +194,11 @@ def UMM(instance, seed, budget, m_ini, eval_ranks, init,
         sample.append(perm)
         perm_f = f_eval(perm)
         fitnesses.append(perm_f)
-        if perm_f < best_f:
-          best_f = perm_f
-          neighborhood = 1
-        else:
-          neighborhood += 1
+        # if perm_f < best_f:
+        #   best_f = perm_f
+        #   neighborhood = 1
+        # else:
+        #   neighborhood += 1
               
         # print(f"UMM: eval={m}\tF={fitnesses[-1]}\tbest_known={instance.best_fitness}")
         # print(fitnesses,ws)
