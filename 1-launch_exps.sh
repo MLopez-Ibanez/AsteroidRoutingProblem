@@ -42,6 +42,7 @@ slurm_job() {
     shift 2
     JOBNAME=${ALGO}-$counter-$$
     # FIXME: "sbatch <<EOF" should be enough
+    # FC: it does not work
     sbatch <(cat <<EOF
 #!/usr/bin/env bash
 # The name to show in queue lists for this job:
@@ -85,7 +86,7 @@ launch_local() {
 
 #LAUNCHER=qsub_job
 OUTDIR="$SCRATCH/asteroides"
-N_SLURM_CPUS=4
+N_SLURM_CPUS=1
 LAUNCHER=slurm_job
 
 # OUTDIR="./"
@@ -96,7 +97,7 @@ nruns=30
 
 INSTANCES=""
 for n in $(seq 10 5 30); do
-    for seed in "42 73"; do
+    for seed in 42 73; do
         INSTANCES="$INSTANCES arp_${n}_${seed}"
     done
 done
@@ -107,6 +108,8 @@ done
 # "
 # Filter out
 INSTANCES=$(echo "$INSTANCES" | grep -v '#' | tr '\n' ' ')
+#echo $INSTANCES
+#exit 0
 
 #budget="100 200 500 1000"
 budget="400"
