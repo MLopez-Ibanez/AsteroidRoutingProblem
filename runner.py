@@ -31,6 +31,9 @@ def run_once(algo_name, instance_name, seed, out_filename = None, **algo_params)
     elif algo_name == "CEGO":
         from cego import cego
         algo = cego
+    elif algo_name == "GreedyNN":
+        from greedy_nn import GreedyNN
+        algo = GreedyNN
     else:
         raise ValueError("Unknown algo: " + algo_name)
 

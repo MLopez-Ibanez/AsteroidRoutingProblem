@@ -89,9 +89,9 @@ OUTDIR="$SCRATCH/asteroides"
 N_SLURM_CPUS=1
 LAUNCHER=slurm_job
 
-# OUTDIR="./"
-# N_LOCAL_CPUS=4
-# LAUNCHER=launch_local
+OUTDIR="./"
+N_LOCAL_CPUS=4
+LAUNCHER=launch_local
 
 nruns=30
 
@@ -133,13 +133,23 @@ for er in $eval_ranks; do
 for distance in $distances; do
 for instance in $INSTANCES; do
     counter=$((counter+1))
-    RESULTS="$OUTDIR/results/m${m}-er${er}/$instance"
+    # RESULTS="$OUTDIR/results/m${m}-er${er}/$instance"
+    # mkdir -p "$RESULTS"
+    # #-learn_${learning}-samp_${sampling}"
+    # $LAUNCHER umm "${RESULTS}/umm-${init}" $instance --m_ini $m_ini --budget $m --init $init --eval_ranks $er 
+    # #--learning $learning --sampling $sampling --distance $distance
+    # $LAUNCHER cego "${RESULTS}/cego" $instance --m_ini $m_ini --budgetGA $budgetGA --budget $m --eval_ranks $er
+done
+done
+done
+done
+
+# We only do 1 run for greedy
+nruns=1
+for instance in $INSTANCES; do
+    counter=$((counter+1))
+    RESULTS="$OUTDIR/results/m1-er0/$instance"
     mkdir -p "$RESULTS"
     #-learn_${learning}-samp_${sampling}"
-    $LAUNCHER umm "${RESULTS}/umm-${init}" $instance --m_ini $m_ini --budget $m --init $init --eval_ranks $er 
-    #--learning $learning --sampling $sampling --distance $distance
-    $LAUNCHER cego "${RESULTS}/cego" $instance --m_ini $m_ini --budgetGA $budgetGA --budget $m --eval_ranks $er
-done
-done
-done
+    $LAUNCHER greedynn "${RESULTS}/greedynn" $instance
 done

@@ -3,7 +3,8 @@ from space_util import (
     Asteroids,
     transfer_from_Earth,
     two_shot_transfer,
-    START_EPOCH
+    START_EPOCH,
+    Earth
 )
 
 from scipy.optimize import minimize
@@ -108,6 +109,8 @@ def optimize_problem(problem, method = 'SLSQP', **kwargs):
                       method=method, **options)
     return result
 
+from scipy.spatial import distance
+
 class Spaceship:
 
     def __init__(self, asteroids):
@@ -139,6 +142,15 @@ class Spaceship:
         self.optimize(ast_id, VisitProblem(from_orbit, to_orbit), **kwargs)
         return self
 
+    def get_euclidean_nearest(self, asteroids):
+        epoch = START_EPOCH
+        ship_r = Earth.propagate(epoch).r.to_value()
+        ship_r = ship_r[None,:] # Convert it to 1-row 3-cols matrix
+        ast_r = np.array([ self.get_ast_orbit(ast_id).r.to_value() for ast_id in asteroids ])
+        ast_dist = distance.cdist(ship_r, ast_r, 'euclidean')
+        return asteroids[np.argmin(ast_dist)]
+
+    
 from problem import Problem
 class AsteroidRouting(Problem):
     # Class attributes
@@ -155,6 +167,21 @@ class AsteroidRouting(Problem):
         self.seed = seed
         super().__init__(instance_name = str(n) + "_" + str(seed))
 
+    def nearest_neighbor(self, x):
+        # This could be optimized to avoid re-evaluating
+        ship = Spaceship(self.asteroids)
+        ast_list = list(range(self.n))
+        for i in range(len(x)):
+            if x[i] < 0:
+                x[i] = ship.get_euclidean_nearest(ast_list)
+            ast_list.remove(x[i])
+            if i == 0:
+                ship.launch(x[0])
+            else:
+                ship.visit(x[i])
+
+        return ship.f
+                
     def fitness_nosave(self, x):
         ship = Spaceship(self.asteroids)
         ship.launch(x[0])
