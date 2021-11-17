@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-def GreedyNN(instance, seed, distance="energy"):
+def GreedyNN(instance, seed, distance="euclidean"):
     n = instance.n
     print(distance)
     x = np.full(n, -1, dtype=int)
