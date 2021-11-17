@@ -28,6 +28,7 @@ parser.add_argument('instance_id', type=str, help='instance_id')
 parser.add_argument('seed', type=int, help='random seed')
 parser.add_argument('instance_name', type=str, help='instance name')
 parser.add_argument("--output", type=str, default=None, help="output file")
+parser.add_argument("--distance", type=str, default="euclidean", help="distance")
 
 # Parameters for the target algorithm
 args = parser.parse_args()
@@ -41,4 +42,4 @@ with open(outfilename, 'w') as sys.stdout:
 sys.stdout = stdout
 print(df["Fitness"].min())
 # remove tmp file.
-os.remove(outfilename)
+#os.remove(outfilename)

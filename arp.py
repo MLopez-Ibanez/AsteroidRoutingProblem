@@ -4,7 +4,8 @@ from space_util import (
     transfer_from_Earth,
     two_shot_transfer,
     START_EPOCH,
-    Earth
+    Earth,
+    MU
 )
 
 from scipy.optimize import minimize
@@ -142,6 +143,25 @@ class Spaceship:
         self.optimize(ast_id, VisitProblem(from_orbit, to_orbit), **kwargs)
         return self
 
+    def get_energy_nearest(self, asteroids):
+        epoch = START_EPOCH
+        if len(self.ast_list) == 0:
+            ship = Earth
+        else:
+            epoch += (self.x[[0,4,5]].sum() + self.x[6:].sum())
+            ship = self.get_ast_orbit(self.ast_list[-1])
+        ship_r = ship.propagate(epoch).r.to_value()[None,:] # Convert it to 1-row 3-cols matrix
+        ship_v = ship.propagate(epoch).v.to_value()[None, :]
+        ast_r = np.array([ self.get_ast_orbit(ast_id).propagate(epoch).r.to_value() for ast_id in asteroids ])
+        ast_v = np.array([ self.get_ast_orbit(ast_id).propagate(epoch).v.to_value() for ast_id in asteroids ])
+        ast_energy = (ast_v**2).sum(axis=1)/2 - MU / np.linalg.norm(ast_r, axis=1)
+        ship_energy = (ship_v**2).sum(axis=1)/2 - MU / np.linalg.norm(ship_r, axis=1)
+        energy_difference = np.abs(ast_energy-ship_energy)
+
+        ast_dist = distance.cdist(ship_r, ast_r, 'euclidean')
+        ast_dist += 2 *energy_difference
+        return asteroids[np.argmin(ast_dist)]
+
     def get_euclidean_nearest(self, asteroids):
         epoch = START_EPOCH
         if len(self.ast_list) == 0:
@@ -171,13 +191,18 @@ class AsteroidRouting(Problem):
         self.seed = seed
         super().__init__(instance_name = str(n) + "_" + str(seed))
 
-    def nearest_neighbor(self, x):
+    def nearest_neighbor(self, x, distance):
         # This could be optimized to avoid re-evaluating
         ship = Spaceship(self.asteroids)
         ast_list = list(range(self.n))
         for i in range(len(x)):
             if x[i] < 0:
-                x[i] = ship.get_euclidean_nearest(ast_list)
+                if distance == "euclidean":
+                    x[i] = ship.get_euclidean_nearest(ast_list)
+                elif distance == "energy":
+                    x[i] = ship.get_energy_nearest(ast_list)
+                else:
+                    raise "Unknown distance "+distance
             ast_list.remove(x[i])
             if i == 0:
                 ship.launch(x[0])
