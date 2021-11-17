@@ -36,7 +36,7 @@ args = parser.parse_args()
 stdout = sys.stdout
 outfilename = f'c{args.configuration_id}-{args.instance_id}-{args.seed}.stdout' 
 with open(outfilename, 'w') as sys.stdout:
-    df = runner.run_once("GreedyNN", args.instance_name, args.seed,
+    df = runner.run_once("GreedyNN", args.instance_name, args.seed, distance = args.distance,
                          out_filename = args.output)
         
 sys.stdout = stdout

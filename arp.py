@@ -150,14 +150,14 @@ class Spaceship:
         else:
             epoch += (self.x[[0,4,5]].sum() + self.x[6:].sum())
             ship = self.get_ast_orbit(self.ast_list[-1])
-        ship_r = ship.propagate(epoch).r.to_value()[None,:] # Convert it to 1-row 3-cols matrix
+        ship_r = ship.propagate(epoch).r.to_value()[None, :] # Convert it to 1-row 3-cols matrix
         ship_v = ship.propagate(epoch).v.to_value()[None, :]
-        ast_r = np.array([ self.get_ast_orbit(ast_id).propagate(epoch).r.to_value() for ast_id in asteroids ])
-        ast_v = np.array([ self.get_ast_orbit(ast_id).propagate(epoch).v.to_value() for ast_id in asteroids ])
+        ast_orbits = [ self.get_ast_orbit(ast_id).propagate(epoch) for ast_id in asteroids ]
+        ast_r = np.array([ orbit.r.to_value() for orbit in ast_orbits ])
+        ast_v = np.array([ orbit.v.to_value() for orbit in ast_orbits ])
         ast_energy = (ast_v**2).sum(axis=1)/2 - MU / np.linalg.norm(ast_r, axis=1)
-        ship_energy = (ship_v**2).sum(axis=1)/2 - MU / np.linalg.norm(ship_r, axis=1)
-        energy_difference = np.abs(ast_energy-ship_energy)
-
+        ship_energy = (ship_v**2).sum(axis=1) / 2 - MU / np.linalg.norm(ship_r, axis=1)
+        energy_difference = np.abs(ast_energy - ship_energy)
         ast_dist = distance.cdist(ship_r, ast_r, 'euclidean')
         print(f'diff_r[0]={ast_dist[0]}, energy_diff[0]={energy_difference[0]}')
         ast_dist /= 1.5e+8
@@ -212,7 +212,7 @@ class AsteroidRouting(Problem):
             else:
                 ship.visit(x[i])
 
-        return ship.f
+        return x, ship.f
                 
     def fitness_nosave(self, x):
         ship = Spaceship(self.asteroids)

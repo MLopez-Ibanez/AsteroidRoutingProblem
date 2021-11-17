@@ -113,12 +113,21 @@ def UMM(instance, seed, budget, m_ini, eval_ranks, init,
     n = instance.n
     if init == "random":
       sample = design_random(m_ini, n)
+      fitnesses = [f_eval(perm) for perm in sample]
+
     elif init == "maxmindist":
       sample = design_maxmindist(m_ini, n, distance = mk.distance)
+      fitnesses = [f_eval(perm) for perm in sample]
+
+    elif init == "greedy_euclidean":
+      sample = design_maxmindist(m_ini - 1, n, distance = mk.distance)
+      fitnesses = [f_eval(perm) for perm in sample]
+      x, f = instance.nearest_neighbor(np.full(n, -1, dtype=int), distance="euclidean")
+      sample.append(x)
+      fitnesses.append(f)
     else:
       raise ValueError(f"Invalid init: {init}")
 
-    fitnesses = [f_eval(perm) for perm in sample]
     best_f = np.min(fitnesses)
     
     # ['rho','phi_estim','phi_sample','Distance']
@@ -168,7 +177,6 @@ def UMM(instance, seed, budget, m_ini, eval_ranks, init,
         #ws = softmax(-np.asarray(fitnesses)) # MINIMIZE
         #ws = softmax(1. / 0.01 * np.hstack((-ws, ws-1))) # MINIMIZE
         #inv_sample = sample + [ reverse(p) for p in sample ]
-                
         sigma0 = mk.weighted_median(np.asarray(sample), ws)
         #sigma0 = sample[np.argmin(fitnesses)]
         #phi_estim = mk.u_phi(inv_sample, sigma0, ws)

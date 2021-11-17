@@ -33,7 +33,7 @@ parser.add_argument("--output", type=str, default=None, help="output file")
 parser.add_argument('--m_ini', type=int, default=10, help='m_ini')
 parser.add_argument('--budget', type=int, default=400, help='budget')
 parser.add_argument('--eval_ranks', type=int, default=0, help='eval_ranks')
-parser.add_argument('--init', choices = ['random', 'maxmindist'], default = 'random', help='init')
+parser.add_argument('--init', choices = ['random', 'maxmindist', 'greedy_euclidean'], default = 'random', help='init')
 
 args = parser.parse_args()
 

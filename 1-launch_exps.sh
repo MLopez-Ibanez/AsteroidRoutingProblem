@@ -81,7 +81,9 @@ launch_local() {
     ALGO=$1
     OUTPUT=$2
     shift 2
-    parallel -j $N_LOCAL_CPUS --verbose ${BINDIR}/target-runner-${ALGO}.py $ALGO $counter-$$-r{} {} $@ --output ${OUTPUT}-r{} ::: $(seq 1 $nruns)
+    for run in $(seq 1 $nruns); do
+        parallel --semaphore -j $N_LOCAL_CPUS --verbose ${BINDIR}/target-runner-${ALGO}.py $ALGO $counter-$$-r$run $run $@ --output ${OUTPUT}-r$run
+    done
 }
 
 #LAUNCHER=qsub_job
@@ -89,7 +91,7 @@ OUTDIR="$SCRATCH/asteroides"
 N_SLURM_CPUS=1
 LAUNCHER=slurm_job
 
-OUTDIR="./"
+OUTDIR="."
 N_LOCAL_CPUS=4
 LAUNCHER=launch_local
 
@@ -122,7 +124,8 @@ budgetGA=4
 
 m_ini=10
 #init="random"
-init="maxmindist"
+# init="maxmindist"
+init="greedy_euclidean"
 distances="kendall"
 #learning="exp"
 #sampling='log'
@@ -133,10 +136,10 @@ for er in $eval_ranks; do
 for distance in $distances; do
 for instance in $INSTANCES; do
     counter=$((counter+1))
-    # RESULTS="$OUTDIR/results/m${m}-er${er}/$instance"
-    # mkdir -p "$RESULTS"
+    RESULTS="$OUTDIR/results/m${m}-er${er}/$instance"
+    mkdir -p "$RESULTS"
     # #-learn_${learning}-samp_${sampling}"
-    # $LAUNCHER umm "${RESULTS}/umm-${init}" $instance --m_ini $m_ini --budget $m --init $init --eval_ranks $er 
+    $LAUNCHER umm "${RESULTS}/umm-${init}" $instance --m_ini $m_ini --budget $m --init $init --eval_ranks $er 
     # #--learning $learning --sampling $sampling --distance $distance
     # $LAUNCHER cego "${RESULTS}/cego" $instance --m_ini $m_ini --budgetGA $budgetGA --budget $m --eval_ranks $er
 done
@@ -146,10 +149,12 @@ done
 
 # We only do 1 run for greedy
 nruns=1
+distances="euclidean energy"
 for instance in $INSTANCES; do
+for distance in $distances; do
     counter=$((counter+1))
     RESULTS="$OUTDIR/results/m1-er0/$instance"
-    mkdir -p "$RESULTS"
-    #-learn_${learning}-samp_${sampling}"
-    $LAUNCHER greedynn "${RESULTS}/greedynn" $instance
+    #mkdir -p "$RESULTS"
+    #$LAUNCHER greedynn "${RESULTS}/greedynn-${distance}" $instance --distance $distance
+done
 done
