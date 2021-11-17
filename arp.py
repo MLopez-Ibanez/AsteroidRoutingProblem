@@ -159,7 +159,10 @@ class Spaceship:
         energy_difference = np.abs(ast_energy-ship_energy)
 
         ast_dist = distance.cdist(ship_r, ast_r, 'euclidean')
-        ast_dist += 2 *energy_difference
+        print(f'diff_r[0]={ast_dist[0]}, energy_diff[0]={energy_difference[0]}')
+        ast_dist /= 1.5e+8
+        ast_dist += 0.05 *energy_difference
+        ast_dist += 0.05 *energy_difference
         return asteroids[np.argmin(ast_dist)]
 
     def get_euclidean_nearest(self, asteroids):
