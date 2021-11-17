@@ -144,9 +144,13 @@ class Spaceship:
 
     def get_euclidean_nearest(self, asteroids):
         epoch = START_EPOCH
-        ship_r = Earth.propagate(epoch).r.to_value()
-        ship_r = ship_r[None,:] # Convert it to 1-row 3-cols matrix
-        ast_r = np.array([ self.get_ast_orbit(ast_id).r.to_value() for ast_id in asteroids ])
+        if len(self.ast_list) == 0:
+            ship = Earth
+        else:
+            epoch += (self.x[[0,4,5]].sum() + self.x[6:].sum())
+            ship = self.get_ast_orbit(self.ast_list[-1])
+        ship_r = ship.propagate(epoch).r.to_value()[None,:] # Convert it to 1-row 3-cols matrix
+        ast_r = np.array([ self.get_ast_orbit(ast_id).propagate(epoch).r.to_value() for ast_id in asteroids ])
         ast_dist = distance.cdist(ship_r, ast_r, 'euclidean')
         return asteroids[np.argmin(ast_dist)]
 
