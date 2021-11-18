@@ -21,7 +21,7 @@ from r_problem import make_r_fitness
 # def r_kendallTau(A,B):
 #     return kendallTau(A,B)
 
-def cego(instance, seed, budget, m_ini, budgetGA, eval_ranks, dist_name):
+def cego(instance, seed, budget, m_ini, budgetGA, eval_ranks, dist_name, init):
     # Reset the list of recorded evaluations.
     instance.reset()
     
@@ -166,7 +166,8 @@ def cego(instance, seed, budget, m_ini, budgetGA, eval_ranks, dist_name):
     res
     }
 
-    my_cego <- function(fun, dist_name, n, m_ini = 5, budget = 15, seed = 0, budgetGA = 100, eval_ranks)
+    my_cego <- function(fun, dist_name, n, m_ini = 5, budget = 15, seed = 0, budgetGA = 100, x0 = NULL, 
+                        eval_ranks, init)
     {
     set.seed(seed)
     # mutation
@@ -179,9 +180,16 @@ def cego(instance, seed, budget, m_ini, budgetGA, eval_ranks, dist_name):
                     kendall = distancePermutationSwap,
                     hamming = distancePermutationHamming,
                     dist_name)
+    initialDesign <- switch(init,
+                            random = designRandom,
+                            maxmindist = designMaxMinDist,
+                            greedy_euclidean = designMaxMinDist,
+                            init)
+    if (!is.null(x0)) x0 <- list(x0)
+    print(x0)
     # start optimization
 #    print("antes del optimCEGO")
-    res <- my_optimCEGO(x = NULL,
+    res <- my_optimCEGO(x = x0,
                         fun = fun,
                         control = list(creationFunction=cF,
                                      distanceFunction = dist,
@@ -189,6 +197,7 @@ def cego(instance, seed, budget, m_ini, budgetGA, eval_ranks, dist_name):
                                                             mutationFunction=mF,
                                                             recombinationFunction=rF),
                                      evalInit=m_ini,budget=budget,verbosity=1,
+                                     initialDesign = initialDesign,
                                      model=modelKriging,
                                      vectorized=FALSE, eval_ranks = eval_ranks))
 
@@ -198,6 +207,12 @@ def cego(instance, seed, budget, m_ini, budgetGA, eval_ranks, dist_name):
     rcode = STAP(rstring, "rcode")
     # This function already converts from 1-based (R) to 0-based (Python)
     r_fitness = make_r_fitness(instance)
+
+    if init == "greedy_euclidean":
+        x, _ = instance.nearest_neighbor(np.full(instance.n, -1, dtype=int), distance="euclidean")
+    else:
+        x = ri.NULL
+        
     best_x, best_fitness, x, y = rcode.my_cego(r_fitness,
                                                dist_name = dist_name,
                                                n = instance.n,
@@ -205,7 +220,9 @@ def cego(instance, seed, budget, m_ini, budgetGA, eval_ranks, dist_name):
                                                budget = budget,
                                                seed = seed,
                                                budgetGA = budgetGA,
-                                               eval_ranks = eval_ranks)
+                                               eval_ranks = eval_ranks,
+                                               init = init,
+                                               x0 = x)
 
     # We use what instance recorded because CEGO may not get us what was
     # actually evaluated.

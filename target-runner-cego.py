@@ -35,6 +35,7 @@ parser.add_argument('--budget', type=int, default=400, help='budget')
 parser.add_argument('--eval_ranks', type=int, default=0, help='eval_ranks')
 parser.add_argument('--distance', choices = ['kendall', 'hamming'], default="kendall", help='distance')
 parser.add_argument('--budgetGA', type=int, default=0, help='budgetGA')
+parser.add_argument('--init', choices = ['random', 'maxmindist', 'greedy_euclidean'], default = 'maxmindist', help='init')
 
 args = parser.parse_args()
 
@@ -46,7 +47,7 @@ budgetGA = 10**args.budgetGA
 stdout = sys.stdout
 outfilename = f'c{args.configuration_id}-{args.instance_id}-{args.seed}.stdout' 
 with open(outfilename, 'w') as sys.stdout:
-    df = runner.run_once("CEGO", args.instance_name, args.seed, budget = budget, m_ini = args.m_ini, budgetGA = budgetGA, eval_ranks = args.eval_ranks, dist_name = args.distance,
+    df = runner.run_once("CEGO", args.instance_name, args.seed, budget = budget, m_ini = args.m_ini, budgetGA = budgetGA, eval_ranks = args.eval_ranks, dist_name = args.distance, init = args.init,
                          out_filename = args.output)
         
 sys.stdout = stdout
