@@ -91,9 +91,9 @@ OUTDIR="$SCRATCH/asteroides"
 N_SLURM_CPUS=1
 LAUNCHER=slurm_job
 
-OUTDIR="."
-N_LOCAL_CPUS=4
-LAUNCHER=launch_local
+#OUTDIR="."
+#N_LOCAL_CPUS=4
+#LAUNCHER=launch_local
 
 nruns=30
 
