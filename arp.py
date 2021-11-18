@@ -66,7 +66,7 @@ class CommonProblem:
 class LaunchProblem(CommonProblem):
     bounds =  CommonProblem.LAUNCH_BOUNDS + CommonProblem.TRANSFER_BOUNDS + CommonProblem.VISIT_BOUNDS
     # Initial solution
-    x0 = np.array([0, 3., np.pi/2, np.pi, 60., 60.])
+    x0 = np.array([0, 30.])
     assert_bounds(x0, bounds)
     print_best = False
     print_all = print_best and True
@@ -76,11 +76,13 @@ class LaunchProblem(CommonProblem):
         super().__init__()
         
     def __call__(self, x):
-        man, to_orbit = transfer_from_Earth(self.ast_orbit,
-                                            t0 = x[0], t1 = x[4], t2 = x[5],
-                                            v_spherical = x[1:4])
+        from_orbit = Earth.propagate(START_EPOCH)
+        man, to_orbit = two_shot_transfer(from_orbit, self.to_orbit, t0=x[0], t1=x[1])
         cost = man.get_total_cost().value
-        time = x[[0,4,5]].sum()
+        cost -= CommonProblem.MAX_VELOCITY
+        if cost < 0:
+            cost=0
+        time = x.sum()
         f = self.update_best(x, cost, time, man)
         return f
 
@@ -137,7 +139,7 @@ class Spaceship:
         return self
 
     def visit(self, ast_id, **kwargs):
-        epoch = START_EPOCH + (self.x[[0,4,5]].sum() + self.x[6:].sum())
+        epoch = START_EPOCH + (self.x[[0, 1]].sum() + self.x[2:].sum())
         from_orbit = self.get_ast_orbit(self.ast_list[-1]).propagate(epoch)
         to_orbit = self.get_ast_orbit(ast_id)
         self.optimize(ast_id, VisitProblem(from_orbit, to_orbit), **kwargs)
@@ -148,7 +150,7 @@ class Spaceship:
         if len(self.ast_list) == 0:
             ship = Earth
         else:
-            epoch += (self.x[[0,4,5]].sum() + self.x[6:].sum())
+            epoch += (self.x[[0, 1]].sum() + self.x[2:].sum())
             ship = self.get_ast_orbit(self.ast_list[-1])
         ship_r = ship.propagate(epoch).r.to_value()[None, :] # Convert it to 1-row 3-cols matrix
         ship_v = ship.propagate(epoch).v.to_value()[None, :]
@@ -169,7 +171,7 @@ class Spaceship:
         if len(self.ast_list) == 0:
             ship = Earth
         else:
-            epoch += (self.x[[0,4,5]].sum() + self.x[6:].sum())
+            epoch += (self.x[[0, 1]].sum() + self.x[2:].sum())
             ship = self.get_ast_orbit(self.ast_list[-1])
         ship_r = ship.propagate(epoch).r.to_value()[None,:] # Convert it to 1-row 3-cols matrix
         ast_r = np.array([ self.get_ast_orbit(ast_id).propagate(epoch).r.to_value() for ast_id in asteroids ])
