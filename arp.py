@@ -79,9 +79,9 @@ class LaunchProblem(CommonProblem):
         from_orbit = Earth.propagate(START_EPOCH)
         man, to_orbit = two_shot_transfer(from_orbit, self.to_orbit, t0=x[0], t1=x[1])
         cost = man.get_total_cost().value
-        cost -= CommonProblem.MAX_VELOCITY
-        if cost < 0:
-            cost=0
+        #cost -= CommonProblem.MAX_VELOCITY
+        #if cost < 0:
+        #    cost=0
         time = x.sum()
         f = self.update_best(x, cost, time, man)
         return f
