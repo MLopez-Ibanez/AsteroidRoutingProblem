@@ -64,7 +64,7 @@ class CommonProblem:
         return f
 
 class LaunchProblem(CommonProblem):
-    bounds =  CommonProblem.LAUNCH_BOUNDS + CommonProblem.TRANSFER_BOUNDS + CommonProblem.VISIT_BOUNDS
+    bounds = CommonProblem.TRANSFER_BOUNDS
     # Initial solution
     x0 = np.array([0, 30.])
     assert_bounds(x0, bounds)
@@ -88,10 +88,10 @@ class LaunchProblem(CommonProblem):
 
 class VisitProblem(CommonProblem):
     bounds = CommonProblem.TRANSFER_BOUNDS + CommonProblem.VISIT_BOUNDS
-    x0 = np.array([0., 30.])
+    x0 = np.array([1., 30.])
     assert_bounds(x0, bounds)
     print_best = False
-    print_all = print_best and True
+    print_all = print_best and False
     
     def __init__(self, from_orbit, to_orbit):
         self.from_orbit = from_orbit
@@ -119,12 +119,14 @@ class Spaceship:
     def __init__(self, asteroids):
         self.get_ast_orbit = asteroids.get_orbit
         self.ast_list = []
+        self.maneuvers = []
+        self.orbit = Earth.propagate(START_EPOCH)
         self.x = np.array([])
         self.f = np.inf
-        self.maneuvers = []
 
     def add_ast(self, ast_id, x, f, maneuvers):
         self.ast_list.append(ast_id)
+        self.orbit = self.get_ast_orbit(ast_id)
         self.x = np.append(self.x, x)
         self.f += f
         self.maneuvers.append(maneuvers)
@@ -135,25 +137,20 @@ class Spaceship:
         
     def launch(self, ast_id, **kwargs):
         self.f = 0.0
-        self.optimize(ast_id, LaunchProblem(self.get_ast_orbit(ast_id)), **kwargs)
-        return self
+        return self.visit(ast_id, **kwargs)
 
     def visit(self, ast_id, **kwargs):
-        epoch = START_EPOCH + (self.x[[0, 1]].sum() + self.x[2:].sum())
-        from_orbit = self.get_ast_orbit(self.ast_list[-1]).propagate(epoch)
+        epoch = START_EPOCH + self.x.sum()
+        from_orbit = self.orbit.propagate(epoch)
         to_orbit = self.get_ast_orbit(ast_id)
         self.optimize(ast_id, VisitProblem(from_orbit, to_orbit), **kwargs)
         return self
 
     def get_energy_nearest(self, asteroids):
-        epoch = START_EPOCH
-        if len(self.ast_list) == 0:
-            ship = Earth
-        else:
-            epoch += (self.x[[0, 1]].sum() + self.x[2:].sum())
-            ship = self.get_ast_orbit(self.ast_list[-1])
-        ship_r = ship.propagate(epoch).r.to_value()[None, :] # Convert it to 1-row 3-cols matrix
-        ship_v = ship.propagate(epoch).v.to_value()[None, :]
+        epoch = START_EPOCH + self.x.sum()
+        ship = self.orbit.propagate(epoch)
+        ship_r = ship.r.to_value()[None, :] # Convert it to 1-row 3-cols matrix
+        ship_v = ship.v.to_value()[None, :]
         ast_orbits = [ self.get_ast_orbit(ast_id).propagate(epoch) for ast_id in asteroids ]
         ast_r = np.array([ orbit.r.to_value() for orbit in ast_orbits ])
         ast_v = np.array([ orbit.v.to_value() for orbit in ast_orbits ])
@@ -167,27 +164,65 @@ class Spaceship:
         return asteroids[np.argmin(ast_dist)]
 
     def get_euclidean_nearest(self, asteroids):
-        epoch = START_EPOCH
-        if len(self.ast_list) == 0:
-            ship = Earth
-        else:
-            epoch += (self.x[[0, 1]].sum() + self.x[2:].sum())
-            ship = self.get_ast_orbit(self.ast_list[-1])
-        ship_r = ship.propagate(epoch).r.to_value()[None,:] # Convert it to 1-row 3-cols matrix
+        epoch = START_EPOCH + self.x.sum()
+        ship = self.orbit.propagate(epoch)
+        ship_r = ship.r.to_value()[None,:] # Convert it to 1-row 3-cols matrix
         ast_r = np.array([ self.get_ast_orbit(ast_id).propagate(epoch).r.to_value() for ast_id in asteroids ])
         ast_dist = distance.cdist(ship_r, ast_r, 'euclidean')
         return asteroids[np.argmin(ast_dist)]
 
     
 from problem import Problem
-class AsteroidRouting(Problem):
+class AsteroidRoutingProblem(Problem):
     # Class attributes
     problem_name = "ARP"
 
+    class _Solution:
+        def __init__(self, instance):
+            self.instance = instance
+            self.ship = Spaceship(instance.asteroids)
+            self._x = []
+
+        def step(self, k):
+            assert k not in self._x 
+            assert len(self._x) < self.instance.n
+            if len(self._x) == 0:
+                self.ship.launch(k)
+            else:
+                self.ship.visit(k)
+            self._x.append(k)
+            return self._x, self.ship.f
+        
+        @property
+        def x(self):
+            return np.asarray(self._x, dtype=int)
+
+        @property
+        def f(self):
+            return self.ship.f
+
+    def EmptySolution(self):
+        return self._Solution(self)
+
+    def CompleteSolution(self, x):
+        self.check_permutation(x)
+        sol = self._Solution(self)
+        for k in x:
+            sol.step(k)
+        return sol
+            
+    def PartialSolution(self, x):
+        sol = self._Solution(self)
+        for k in x:
+            if k < 0:
+                break
+            sol.step(k)
+        return sol
+                
     @classmethod
-    def read_instance(self, instance_name):
+    def read_instance(cls, instance_name):
         *_, n, seed = instance_name.split("_")
-        return AsteroidRouting(int(n), int(seed))
+        return cls(int(n), int(seed))
     
     def __init__(self, n, seed):
         self.asteroids = Asteroids(n, seed=seed)
@@ -197,28 +232,21 @@ class AsteroidRouting(Problem):
 
     def nearest_neighbor(self, x, distance):
         # This could be optimized to avoid re-evaluating
-        ship = Spaceship(self.asteroids)
-        ast_list = list(range(self.n))
-        for i in range(len(x)):
-            if x[i] < 0:
-                if distance == "euclidean":
-                    x[i] = ship.get_euclidean_nearest(ast_list)
-                elif distance == "energy":
-                    x[i] = ship.get_energy_nearest(ast_list)
-                else:
-                    raise "Unknown distance "+distance
-            ast_list.remove(x[i])
-            if i == 0:
-                ship.launch(x[0])
-            else:
-                ship.visit(x[i])
+        sol = self.PartialSolution(x)
+        if distance == "euclidean":
+            get_next = sol.ship.get_euclidean_nearest
+        elif distance == "energy":
+            get_next = sol.ship.get_energy_nearest
+        else:
+            raise ValueError("Unknown distance " + distance)
+        
+        ast_list = list(set(range(self.n)) - set(sol.x))
+        while ast_list:
+            k = get_next(ast_list)
+            ast_list.remove(k)
+            sol.step(k)
 
-        return x, ship.f
+        return sol.x, sol.f
                 
     def fitness_nosave(self, x):
-        ship = Spaceship(self.asteroids)
-        ship.launch(x[0])
-        for ast in x[1:]:
-            ship.visit(ast)
-        return ship.f
-
+        return self.CompleteSolution(x).f

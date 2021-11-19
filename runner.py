@@ -19,8 +19,8 @@ def get_problem(instance_name):
         from pfsp import PFSP_Csum
         return PFSP_Csum
     elif "arp" in instance_name:
-        from arp import AsteroidRouting
-        return AsteroidRouting
+        from arp import AsteroidRoutingProblem
+        return AsteroidRoutingProblem
     raise ValueError("Unknown problem: " + instance_name)
 
 
