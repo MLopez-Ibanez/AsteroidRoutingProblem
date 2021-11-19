@@ -91,9 +91,9 @@ OUTDIR="$SCRATCH/asteroides"
 N_SLURM_CPUS=1
 LAUNCHER=slurm_job
 
-#OUTDIR="."
-#N_LOCAL_CPUS=4
-#LAUNCHER=launch_local
+# OUTDIR="."
+# N_LOCAL_CPUS=4
+# LAUNCHER=launch_local
 
 nruns=30
 
@@ -105,8 +105,8 @@ for n in $(seq 10 5 30); do
 done
 # INSTANCES="
 # arp_10_42
-# arp_15_42
-# arp_20_42
+# #arp_15_42
+# #arp_20_42
 # "
 # Filter out
 INSTANCES=$(echo "$INSTANCES" | grep -v '#' | tr '\n' ' ')
@@ -116,15 +116,15 @@ INSTANCES=$(echo "$INSTANCES" | grep -v '#' | tr '\n' ' ')
 #budget="100 200 500 1000"
 budget="400"
 eval_ranks="0 1"
-# eval_ranks=1
+#eval_ranks=1
 #eval_ranks=0
 
 # Actually, 10**budgetGA
 budgetGA=4
 
 m_ini=10
-#init="random"
-#init="maxmindist"
+#inits="random"
+#inits="maxmindist"
 inits="greedy_euclidean maxmindist"
 distances="kendall"
 #learning="exp"

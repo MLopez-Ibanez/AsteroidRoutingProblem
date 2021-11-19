@@ -210,6 +210,8 @@ def cego(instance, seed, budget, m_ini, budgetGA, eval_ranks, dist_name, init):
 
     if init == "greedy_euclidean":
         x, _ = instance.nearest_neighbor(np.full(instance.n, -1, dtype=int), distance="euclidean")
+        # R is 1-based
+        x = np.asarray(x)+1
     else:
         x = ri.NULL
         
@@ -233,4 +235,5 @@ def cego(instance, seed, budget, m_ini, budgetGA, eval_ranks, dist_name, init):
         seed = seed,
         budget = budget, budgetGA = budgetGA,
         eval_ranks = eval_ranks,
+        init = init,
         Distance = [ instance.distance_to_best(perm, distance) for perm in instance.solutions]))
