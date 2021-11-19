@@ -1,20 +1,15 @@
-from astropy import units as u
-from astropy.time import Time
 import numpy as np
+import matplotlib.pyplot as plt
 
 from poliastro.plotting import StaticOrbitPlotter
 from poliastro.plotting.util import generate_label
-import matplotlib.pyplot as plt
 from poliastro.twobody.propagation import propagate
+from astropy import units as u
 from astropy.time import TimeDelta
 from arp import AsteroidRoutingProblem
 from space_util import (
-    Asteroids,
-    transfer_from_Earth,
-    two_shot_transfer,
     START_EPOCH,
     Earth,
-    MU
 )
 
 def plot_solution(self, x):
@@ -42,12 +37,13 @@ def plot_solution(self, x):
         rr = propagate(ship, tofs)
         frame.plot_trajectory(rr, color = f'C{k+1}',label=generate_label(epoch, f'Asteroid {ast}'))
           
-    plt.show()
+    return frame
 
 
-instance = AsteroidRoutingProblem(10, 42)
-x,f = instance.nearest_neighbor([], "euclidean")
-print(x)
-print(f)
 
-plot_solution(instance, x)
+# instance = AsteroidRoutingProblem(10, 42)
+# x,f = instance.nearest_neighbor([], "euclidean")
+# print(x)
+# print(f)
+
+# plot_solution(instance, x)

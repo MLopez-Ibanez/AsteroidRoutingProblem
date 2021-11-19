@@ -233,4 +233,5 @@ def cego(instance, seed, budget, m_ini, budgetGA, eval_ranks, dist_name, init):
         seed = seed,
         budget = budget, budgetGA = budgetGA,
         eval_ranks = eval_ranks,
+        init = init,
         Distance = [ instance.distance_to_best(perm, distance) for perm in instance.solutions]))
