@@ -125,7 +125,7 @@ budgetGA=4
 m_ini=10
 #init="random"
 #init="maxmindist"
-init="greedy_euclidean maxmindist"
+inits="greedy_euclidean maxmindist"
 distances="kendall"
 #learning="exp"
 #sampling='log'
@@ -134,6 +134,7 @@ counter=0
 for m in $budget; do
 for er in $eval_ranks; do
 for distance in $distances; do
+for init in $inits; do
 for instance in $INSTANCES; do
     counter=$((counter+1))
     RESULTS="$OUTDIR/results/m${m}-er${er}/$instance"
@@ -142,6 +143,7 @@ for instance in $INSTANCES; do
     $LAUNCHER umm "${RESULTS}/umm-${init}" $instance --m_ini $m_ini --budget $m --init $init --eval_ranks $er 
     # #--learning $learning --sampling $sampling --distance $distance
     $LAUNCHER cego "${RESULTS}/cego-${init}" $instance --m_ini $m_ini --budgetGA $budgetGA --budget $m --init $init --eval_ranks $er
+done
 done
 done
 done
