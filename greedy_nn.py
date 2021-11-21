@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-def GreedyNN(instance, seed = None, distance):
+def GreedyNN(instance, seed = None, distance=None):
     n = instance.n
     x = np.full(n, -1, dtype=int)
     x, f = instance.nearest_neighbor(x, distance=distance)

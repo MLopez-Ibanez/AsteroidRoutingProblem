@@ -140,7 +140,7 @@ for instance in $INSTANCES; do
     RESULTS="$OUTDIR/results/m${m}-er${er}/$instance"
     mkdir -p "$RESULTS"
     # #-learn_${learning}-samp_${sampling}"
-    $LAUNCHER umm "${RESULTS}/umm-${init}" $instance --m_ini $m_ini --budget $m --init $init --eval_ranks $er 
+    #$LAUNCHER umm "${RESULTS}/umm-${init}" $instance --m_ini $m_ini --budget $m --init $init --eval_ranks $er 
     # #--learning $learning --sampling $sampling --distance $distance
     $LAUNCHER cego "${RESULTS}/cego-${init}" $instance --m_ini $m_ini --budgetGA $budgetGA --budget $m --init $init --eval_ranks $er
 done
