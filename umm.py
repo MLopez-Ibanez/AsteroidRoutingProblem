@@ -85,8 +85,15 @@ def design_random(m, n):
 def min_distance(x, s, dist_fun):
   return np.apply_along_axis(dist_fun, -1, np.asarray(s), b=x).min()
   
-def design_maxmindist(m, n, distance, budget = 1000):
-  sample = [ np.random.permutation(n) ]
+def design_maxmindist(m, n, distance, budget = 1000, x0 = None):
+  if x0 is None:
+    sample = [ np.random.permutation(n) ]
+  else:
+    if not isinstance(x0, list):
+      x0 = [ x0 ]
+    sample += x0
+    m -= len(sample) - 1
+    
   while len(sample) < m:
     best = np.random.permutation(n)
     best_d = min_distance(best, sample, distance)
@@ -120,13 +127,13 @@ def UMM(instance, seed, budget, m_ini, eval_ranks, init,
       fitnesses = [f_eval(perm) for perm in sample]
 
     elif init == "greedy_euclidean":
-      sample = design_maxmindist(m_ini - 1, n, distance = mk.distance)
-      fitnesses = [f_eval(perm) for perm in sample]
-      x, f = instance.nearest_neighbor(np.full(n, -1, dtype=int), distance="euclidean")
+      x0, f = instance.nearest_neighbor(np.full(n, -1, dtype=int), distance="euclidean")
       if not eval_ranks:
-        x = np.argsort(x)
-      sample.append(x)
-      fitnesses.append(f)
+        x0 = np.argsort(x0)
+      sample = design_maxmindist(m_ini, n, distance = mk.distance, x0 = x0)
+      # avoid double evaluation
+      fitnesses = [ f ] + [ f_eval(perm) for perm in sample[1:] ]
+
     else:
       raise ValueError(f"Invalid init: {init}")
 
