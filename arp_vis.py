@@ -36,7 +36,7 @@ def plot_solution(self, x):
             tofs = TimeDelta(np.linspace(0,  t[2*(k+1)] * u.day, num=100))
         rr = propagate(ship, tofs)
         frame.plot_trajectory(rr, color = f'C{k+1}',label=generate_label(epoch, f'Asteroid {ast}'))
-          
+    
     return frame
 
 
