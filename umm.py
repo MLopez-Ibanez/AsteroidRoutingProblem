@@ -123,6 +123,8 @@ def UMM(instance, seed, budget, m_ini, eval_ranks, init,
       sample = design_maxmindist(m_ini - 1, n, distance = mk.distance)
       fitnesses = [f_eval(perm) for perm in sample]
       x, f = instance.nearest_neighbor(np.full(n, -1, dtype=int), distance="euclidean")
+      if not eval_ranks:
+        x = np.argsort(x)
       sample.append(x)
       fitnesses.append(f)
     else:

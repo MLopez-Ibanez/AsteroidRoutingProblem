@@ -210,7 +210,7 @@ def cego(instance, seed, budget, m_ini, budgetGA, eval_ranks, dist_name, init):
 
     if init == "greedy_euclidean":
         x, _ = instance.nearest_neighbor(np.full(instance.n, -1, dtype=int), distance="euclidean")
-        if eval_ranks == 0:
+        if not eval_ranks:
             x = np.argsort(x)
         # R is 1-based
         x = np.asarray(x)+1
