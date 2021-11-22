@@ -117,7 +117,7 @@ INSTANCES=$(echo "$INSTANCES" | grep -v '#' | tr '\n' ' ')
 budget="400"
 eval_ranks="0 1"
 #eval_ranks=1
-#eval_ranks=0
+eval_ranks=0
 
 # Actually, 10**budgetGA
 budgetGA=4
@@ -125,7 +125,8 @@ budgetGA=4
 m_ini=10
 #inits="random"
 #inits="maxmindist"
-inits="greedy_euclidean maxmindist"
+#inits="greedy_euclidean maxmindist"
+inits="greedy_euclidean"
 distances="kendall"
 #learning="exp"
 #sampling='log'
@@ -157,6 +158,6 @@ for distance in $distances; do
     counter=$((counter+1))
     RESULTS="$OUTDIR/results/m1-er0/$instance"
     mkdir -p "$RESULTS"
-    $LAUNCHER greedynn "${RESULTS}/greedynn-${distance}" $instance --distance $distance
+    #$LAUNCHER greedynn "${RESULTS}/greedynn-${distance}" $instance --distance $distance
 done
 done
