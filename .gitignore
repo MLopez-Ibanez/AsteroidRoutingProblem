@@ -2,3 +2,4 @@ __pycache__
 *.stdout
 *.stderr
 .ipynb_checkpoints/
+.Rproj.user
