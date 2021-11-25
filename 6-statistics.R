@@ -69,3 +69,6 @@ compute.informed.stats <- function() {
   
   return (result) 
 }
+
+compute.bb.stats()
+compute.informed.stats()
