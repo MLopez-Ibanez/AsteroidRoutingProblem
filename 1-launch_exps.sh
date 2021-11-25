@@ -87,13 +87,13 @@ launch_local() {
 }
 
 #LAUNCHER=qsub_job
-OUTDIR="$SCRATCH/asteroides"
-N_SLURM_CPUS=1
-LAUNCHER=slurm_job
+# OUTDIR="$SCRATCH/asteroides"
+# N_SLURM_CPUS=1
+# LAUNCHER=slurm_job
 
-# OUTDIR="."
-# N_LOCAL_CPUS=4
-# LAUNCHER=launch_local
+OUTDIR="."
+N_LOCAL_CPUS=4
+LAUNCHER=launch_local
 
 nruns=30
 
@@ -113,7 +113,6 @@ INSTANCES=$(echo "$INSTANCES" | grep -v '#' | tr '\n' ' ')
 #echo $INSTANCES
 #exit 0
 
-#budget="100 200 500 1000"
 budget="400"
 eval_ranks="0 1"
 #eval_ranks=1
@@ -125,8 +124,8 @@ budgetGA=4
 m_ini=10
 #inits="random"
 #inits="maxmindist"
-#inits="greedy_euclidean maxmindist"
-inits="greedy_euclidean"
+inits="maxmindist greedy_euclidean"
+#inits="greedy_euclidean"
 distances="kendall"
 #learning="exp"
 #sampling='log'
@@ -158,6 +157,6 @@ for distance in $distances; do
     counter=$((counter+1))
     RESULTS="$OUTDIR/results/m1-er0/$instance"
     mkdir -p "$RESULTS"
-    #$LAUNCHER greedynn "${RESULTS}/greedynn-${distance}" $instance --distance $distance
+    $LAUNCHER greedynn "${RESULTS}/greedynn-${distance}" $instance --distance $distance
 done
 done

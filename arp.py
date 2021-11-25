@@ -8,8 +8,8 @@ from space_util import (
     MU
 )
 
-from scipy.optimize import minimize
-from scipy.optimize import Bounds
+from scipy.optimize import minimize,Bounds
+from scipy.spatial import distance
 
 def assert_bounds(x, bounds):
     bounds = np.asarray(bounds)
@@ -25,13 +25,6 @@ def get_default_opts(method, tol = 1e-4, adaptive = True, eps = 1.49011611938476
     return options[method]
 
 class CommonProblem:
-    # The Mother Ship's escaping velocity from the earth cannot exceed 6 km/s:
-    MAX_VELOCITY=6. # km / s
-
-    LAUNCH_BOUNDS = [(0., 365.),
-                     (0.01, MAX_VELOCITY),
-                     (0., np.pi),
-                     (0., 2 * np.pi)]
     TRANSFER_BOUNDS = [(0., 730.)] # (0 days, 2 years)
     VISIT_BOUNDS = [(1., 730.)] # (1 day, 2 years)
     #
@@ -63,29 +56,6 @@ class CommonProblem:
             print(f'{f}:{cost}:{time}:{x}')
         return f
 
-class LaunchProblem(CommonProblem):
-    bounds = CommonProblem.TRANSFER_BOUNDS
-    # Initial solution
-    x0 = np.array([0, 30.])
-    assert_bounds(x0, bounds)
-    print_best = False
-    print_all = print_best and True
-        
-    def __init__(self, ast_orbit):
-        self.ast_orbit = ast_orbit
-        super().__init__()
-        
-    def __call__(self, x):
-        from_orbit = Earth.propagate(START_EPOCH)
-        man, to_orbit = two_shot_transfer(from_orbit, self.to_orbit, t0=x[0], t1=x[1])
-        cost = man.get_total_cost().value
-        #cost -= CommonProblem.MAX_VELOCITY
-        #if cost < 0:
-        #    cost=0
-        time = x.sum()
-        f = self.update_best(x, cost, time, man)
-        return f
-
 class VisitProblem(CommonProblem):
     bounds = CommonProblem.TRANSFER_BOUNDS + CommonProblem.VISIT_BOUNDS
     x0 = np.array([1., 30.])
@@ -111,8 +81,6 @@ def optimize_problem(problem, method = 'SLSQP', **kwargs):
     result = minimize(problem, x0 = problem.x0, bounds = problem.bounds,
                       method=method, **options)
     return result
-
-from scipy.spatial import distance
 
 class Spaceship:
 

@@ -137,5 +137,3 @@ def two_shot_transfer(from_orbit, to_orbit, t0, t1):
                 to_orbit)
     return mann, to_orbit
 
-
-
