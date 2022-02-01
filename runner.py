@@ -34,6 +34,9 @@ def run_once(algo_name, instance_name, seed, out_filename = None, **algo_params)
     elif algo_name == "GreedyNN":
         from greedy_nn import GreedyNN
         algo = GreedyNN
+    elif algo_name == "RandomSearch":
+        from random_search import RandomSearch
+        algo = RandomSearch
     else:
         raise ValueError("Unknown algo: " + algo_name)
 

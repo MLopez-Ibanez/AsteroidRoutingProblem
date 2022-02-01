@@ -140,13 +140,21 @@ for instance in $INSTANCES; do
     RESULTS="$OUTDIR/results/m${m}-er${er}/$instance"
     mkdir -p "$RESULTS"
     # #-learn_${learning}-samp_${sampling}"
-    $LAUNCHER umm "${RESULTS}/umm-${init}" $instance --m_ini $m_ini --budget $m --init $init --eval_ranks $er 
+    # $LAUNCHER umm "${RESULTS}/umm-${init}" $instance --m_ini $m_ini --budget $m --init $init --eval_ranks $er 
     # #--learning $learning --sampling $sampling --distance $distance
     #$LAUNCHER cego "${RESULTS}/cego-${init}" $instance --m_ini $m_ini --budgetGA $budgetGA --budget $m --init $init --eval_ranks $er
 done
 done
 done
 done
+done
+
+# We only do 1 run for greedy
+for instance in $INSTANCES; do
+    counter=$((counter+1))
+    RESULTS="$OUTDIR/results/m1-er0/$instance"
+    mkdir -p "$RESULTS"
+    $LAUNCHER randomsearch "${RESULTS}/randomsearch" $instance
 done
 
 # We only do 1 run for greedy
@@ -157,6 +165,7 @@ for distance in $distances; do
     counter=$((counter+1))
     RESULTS="$OUTDIR/results/m1-er0/$instance"
     mkdir -p "$RESULTS"
-    $LAUNCHER greedynn "${RESULTS}/greedynn-${distance}" $instance --distance $distance
+    # $LAUNCHER greedynn "${RESULTS}/greedynn-${distance}" $instance --distance $distance
 done
 done
+
