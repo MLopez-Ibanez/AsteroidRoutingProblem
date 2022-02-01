@@ -11,9 +11,11 @@ get.end.fitness <- function (x) {
   return ((x %>% group_by(seed) %>% summarise(.groups='drop_last', min.fitness=min(Fitness)))$min.fitness)
 }
 
-read.data <- function (folder, instance, er, alg, distance) {
-  filename <- paste0(alg, '-', distance,".csv.xz")
-  subfolder <- paste0('m400-er', er)
+read.data <- function (folder, instance, er, alg, distance = "") {
+  if (distance != "") distance <- paste0("-", distance)
+  filename <- paste0(alg, distance,".csv.xz")
+  if (er != "") er <- paste0("-er", er)
+  subfolder <- paste0('m400', er)
   path <- paste(folder, subfolder, instance, filename, sep='/')
   return(read.csv(path))
 }
@@ -34,6 +36,7 @@ compute.bb.stats <- function() {
     cego_order <- read_end_fitness('results', ins, 1, 'cego', 'maxmindist')
     umm_ranking <- read_end_fitness('results', ins, 0, 'umm', 'maxmindist')
     umm_order <- read_end_fitness('results', ins, 1, 'umm', 'maxmindist')
+    randomsearch <- read_end_fitness('results', ins, "", 'randomsearch', '')
     
     cego.bb.repr <- wilcox.test(cego_ranking, cego_order)$p.value
     umm.bb.repr <- wilcox.test(umm_ranking, umm_order)$p.value

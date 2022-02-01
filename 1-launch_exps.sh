@@ -149,12 +149,13 @@ done
 done
 done
 
-# We only do 1 run for greedy
+for m in $budget; do
 for instance in $INSTANCES; do
     counter=$((counter+1))
-    RESULTS="$OUTDIR/results/m1-er0/$instance"
+    RESULTS="$OUTDIR/results/m${m}/$instance"
     mkdir -p "$RESULTS"
     $LAUNCHER randomsearch "${RESULTS}/randomsearch" $instance
+done
 done
 
 # We only do 1 run for greedy
