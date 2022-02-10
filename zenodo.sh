@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 zipfile="zenodo.zip"
 if [ -r $zipfile ]; then
@@ -10,9 +10,10 @@ README.md
 0-setup.sh
 1-launch_exps.sh
 2-collect_results.py
+3-analysis.ipynb
 4-analysis.ipynb
-5-visualize_sol.ipynb
-6-statistics.R
+4-visualize_sol.ipynb
+5-statistics.R
 arp.py
 arp_vis.py
 ast_orbits.pkl.gz
@@ -26,11 +27,13 @@ problem.py
 python-requirements.txt
 results
 r_problem.py
+random_search.py
 runner.py
 space_util.py
 target-runner-cego.py
 target-runner-greedynn.py
 target-runner-umm.py
+target-runner-randomsearch.py
 timer.py
 umm.py
 EOF
