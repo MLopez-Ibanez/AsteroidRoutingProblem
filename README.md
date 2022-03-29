@@ -4,7 +4,7 @@ The Asteroid Routing Problem: A Benchmark for Expensive Black-Box Permutation Op
 > Manuel López-Ibáñez, Francisco Chicano, Rodrigo Gil-Merino. **The Asteroid Routing Problem: A Benchmark for Expensive Black-Box Permutation Optimization.** In _EvoApplications 2022_, LNCS 13224, Springer Nature Switzerland, 2022. [10.1007/978-3-031-02462-7_9](https://doi.org/10.1007/978-3-031-02462-7_9)
 
 
-Steps to reproduce:
+### Steps to reproduce ###
 
  * `0-setup.sh` : Install all required R and Python packages. Needs python 3 and R
 
@@ -17,4 +17,18 @@ Steps to reproduce:
  * `4-visualize_sol.ipynb`: Visualization of solutions.
 
  * `5-statistics.R`: Statistical tests.
+
+### Examples of solutions ###
+
+* Greedy Solution:
+  
+  ![Greedy Solution](/img/sol_greedy_10_73.svg)
+
+ * CEGO+Greedy Solution:
+ 
+  ![CEGO+Greedy Solution](/img/sol_cego-greedy-er1_10_73.svg)
+
+ * UMM+Greedy Solution:
+
+  ![UMM+Greedy Solution](/img/sol_umm-greedy-er0_10_73.svg)
 
