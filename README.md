@@ -1,7 +1,7 @@
 The Asteroid Routing Problem: A Benchmark for Expensive Black-Box Permutation Optimization
 ============================
 
-> Manuel López-Ibáñez, Francisco Chicano, Rodrigo Gil-Merino. **The Asteroid Routing Problem: A Benchmark for Expensive Black-Box Permutation Optimization.** In _EvoApplications 2022_, LNCS 13224, Springer Nature Switzerland, 2022. [https://doi.org/10.1007/978-3-031-02462-7_9](10.1007/978-3-031-02462-7_9)
+> Manuel López-Ibáñez, Francisco Chicano, Rodrigo Gil-Merino. **The Asteroid Routing Problem: A Benchmark for Expensive Black-Box Permutation Optimization.** In _EvoApplications 2022_, LNCS 13224, Springer Nature Switzerland, 2022. [10.1007/978-3-031-02462-7_9](https://doi.org/10.1007/978-3-031-02462-7_9)
 
 
 Steps to reproduce:
