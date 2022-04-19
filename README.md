@@ -31,3 +31,32 @@ The Asteroid Routing Problem: A Benchmark for Expensive Black-Box Permutation Op
 
   ![UMM+Greedy Solution](/img/sol_umm-greedy-er0_10_73.svg)
 
+### License ###
+
+
+[![license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/MLopez-Ibanez/AsteroidRoutingProblem/raw/main/COPYING)
+
+This software is Copyright (C) 2022 Manuel López-Ibáñez, Francisco Chicano and
+Rodrigo Gil-Merino under the MIT license. Please refer to the
+[COPYING](https://github.com/MLopez-Ibanez/AsteroidRoutingProblem/raw/main/COPYING)
+file.
+
+CEGO is Copyright (C) 2021 Martin Zaefferer distributed under the GPL v3:
+https://cran.r-project.org/package=CEGO
+
+UMM is Copyright (C) 2021 Ekhine Irurozki and Manuel López-Ibáñez distributed
+under the GPL v3: https://github.com/ekhiru/BB_optim
+
+poliastro is Copyright (c) 2012-2021 Juan Luis Cano Rodríguez and the poliastro development team, released under the MIT license: https://github.com/poliastro/poliastro/
+
+Other packages used or required by this software may have their own licenses.
+
+**IMPORTANT NOTE:** Please be aware that the fact that this program is released as
+Free Software does not excuse you from scientific propriety, which obligates
+you to give appropriate credit! If you write a scientific paper describing
+research that made substantive use of this program, it is your obligation as a
+scientist to (a) mention the fashion in which this software was used in the
+Methods section; (b) mention the appropriate citation in the References section:
+
+    Manuel López-Ibáñez, Francisco Chicano, Rodrigo Gil-Merino. The Asteroid Routing Problem: A Benchmark for Expensive Black-Box Permutation Optimization. In Applications of Evolutionary Computation 2022, LNCS 13224, Springer Nature, Switzerland, 2022.
+
