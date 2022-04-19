@@ -83,5 +83,34 @@ for (s in c(10,15,20,25,30)) {
   }
 }
 
+boxplots <- function() {
+  library(ggplot2)
+  result <- data.frame(instance=character(), 
+                       algo=character(), 
+                       fitness=numeric())
+  
+  # Ranking is er=0, Order is er=1
+  for (ins in instances) {
+    tmp <- cbind(instance = ins,
+                 rbind(data.frame(algo = "CEGO-rank",
+                                  fitness = read_end_fitness('results', ins, 0, 'cego', 'maxmindist')),
+                       data.frame(algo = "CEGO-order",
+                                  fitness = read_end_fitness('results', ins, 1, 'cego', 'maxmindist')),
+                       data.frame(algo = "UMM-rank",
+                                  fitness = read_end_fitness('results', ins, 0, 'umm', 'maxmindist')),
+                       data.frame(algo = "UMM-order",
+                                  fitness = read_end_fitness('results', ins, 1, 'umm', 'maxmindist')),
+                       data.frame(algo = "RandomSearch",
+                                  fitness = read_end_fitness('results', ins, "", 'randomsearch', ''))))
+    tmp$fitness <- (tmp$fitness - min(tmp$fitness)) / min(tmp$fitness)
+    result <- rbind(result, tmp)
+  }
+  g <- ggplot(result, aes(x=instance, y=fitness, color=algo)) + geom_boxplot() + coord_flip()
+  return(g)
+}
+
+boxplots()
+
 compute.bb.stats()
 compute.informed.stats()
+
