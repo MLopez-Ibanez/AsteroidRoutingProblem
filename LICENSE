@@ -1,0 +1,46 @@
+MIT License
+
+Copyright (c) 2022 Manuel López-Ibáñez, Francisco Chicano and Rodrigo Gil-Merino
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+IMPORTANT NOTE: Please be aware that the fact that this program is released as
+Free Software does not excuse you from scientific propriety, which obligates
+you to give appropriate credit! If you write a scientific paper describing
+research that made substantive use of this program, it is your obligation as a
+scientist to (a) mention the fashion in which this software was used in the
+Methods section; (b) mention the appropriate citation in the References section:
+
+    Manuel López-Ibáñez, Francisco Chicano, Rodrigo Gil-Merino. 
+    The Asteroid Routing Problem: A Benchmark for Expensive Black-Box Permutation
+    Optimization. In Applications of Evolutionary Computation 2022, LNCS 13224,
+    Springer Nature, Switzerland, 2022.
+
+Other packages used or required by this software may have their own licenses.
+
+CEGO is Copyright (C) 2021 Martin Zaefferer distributed under the GPL v3:
+https://cran.r-project.org/package=CEGO
+
+UMM is Copyright (C) 2021 Ekhine Irurozki and Manuel López-Ibáñez distributed
+under the GPL v3: https://github.com/ekhiru/BB_optim
+
+poliastro is Copyright (c) 2012-2021 Juan Luis Cano Rodríguez and the poliastro
+development team, released under the MIT license:
+https://github.com/poliastro/poliastro/
+
