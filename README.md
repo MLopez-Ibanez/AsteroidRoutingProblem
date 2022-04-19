@@ -34,12 +34,9 @@ The Asteroid Routing Problem: A Benchmark for Expensive Black-Box Permutation Op
 ### License ###
 
 
-[![license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/MLopez-Ibanez/AsteroidRoutingProblem/raw/main/COPYING)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](./COPYING)
 
-This software is Copyright (C) 2022 Manuel López-Ibáñez, Francisco Chicano and
-Rodrigo Gil-Merino under the MIT license. Please refer to the
-[COPYING](https://github.com/MLopez-Ibanez/AsteroidRoutingProblem/raw/main/COPYING)
-file.
+This software is Copyright (C) 2022 Manuel López-Ibáñez, Francisco Chicano and Rodrigo Gil-Merino under the MIT license. Please refer to the [COPYING](./COPYING) file.
 
 CEGO is Copyright (C) 2021 Martin Zaefferer distributed under the GPL v3:
 https://cran.r-project.org/package=CEGO
