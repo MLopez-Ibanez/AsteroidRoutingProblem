@@ -36,12 +36,12 @@ The Asteroid Routing Problem: A Benchmark for Expensive Black-Box Permutation Op
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](./LICENSE)
 
-This software is Copyright (C) 2022 Manuel López-Ibáñez, Francisco Chicano and Rodrigo Gil-Merino under the MIT license. Please refer to the [LICENSE](./LICENSE) file.
+This software is Copyright (c) 2022 Manuel López-Ibáñez, Francisco Chicano and Rodrigo Gil-Merino under the MIT license. Please refer to the [LICENSE](./LICENSE) file.
 
-CEGO is Copyright (C) 2021 Martin Zaefferer distributed under the GPL v3:
+CEGO is Copyright (c) 2021 Martin Zaefferer distributed under the GPL v3:
 https://cran.r-project.org/package=CEGO
 
-UMM is Copyright (C) 2021 Ekhine Irurozki and Manuel López-Ibáñez distributed
+UMM is Copyright (c) 2021 Ekhine Irurozki and Manuel López-Ibáñez distributed
 under the GPL v3: https://github.com/ekhiru/BB_optim
 
 poliastro is Copyright (c) 2012-2021 Juan Luis Cano Rodríguez and the poliastro development team, released under the MIT license: https://github.com/poliastro/poliastro/
