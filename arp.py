@@ -169,6 +169,16 @@ class AsteroidRoutingProblem(Problem):
         def f(self):
             return self.ship.f
 
+        def get_cost(self):
+            cost = 0.0
+            for man in self.ship.maneuvers:
+                cost += man.get_total_cost().value
+            return cost
+
+        def get_time(self):
+            return self.ship.x.sum()
+
+
     def EmptySolution(self):
         return self._Solution(self)
 
@@ -186,7 +196,7 @@ class AsteroidRoutingProblem(Problem):
                 break
             sol.step(k)
         return sol
-                
+
     @classmethod
     def read_instance(cls, instance_name):
         *_, n, seed = instance_name.split("_")
