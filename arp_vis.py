@@ -76,10 +76,15 @@ def plot_solution(self, x, ax = None):
             tofs = TimeDelta(np.linspace(0,  t[2*(k+1)] * u.day, num=100))
         rr = propagate(ship, tofs)
         frame.plot_trajectory(rr, color = f'C{k+1}',label=generate_label(epoch, f'Asteroid {ast}'))
-    
-    return ax, frame
 
+    return ax, frame, sol.f, sol.get_cost(), sol.get_time()
 
+def plot_solution_to_pdf(instance, sol, pdf_file, title = None, figsize = "lncs"):
+    fig, ax = plt.subplots(figsize=get_fig_size(figsize, fraction=1))
+    ax, _, f, cost, time = plot_solution(instance, sol, ax = ax)
+    if title is not None:
+        fig.suptitle(title + f'$\Delta v$={cost:.1f} km/s, $T$={time:.1f} days, $f$={f:.1f}', x=.58, y=0.94)
+    fig.savefig(pdf_file, bbox_inches="tight")
 
 # instance = AsteroidRoutingProblem(10, 42)
 # x,f = instance.nearest_neighbor([], "euclidean")
