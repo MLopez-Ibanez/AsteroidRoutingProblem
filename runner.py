@@ -37,6 +37,9 @@ def run_once(algo_name, instance_name, seed, out_filename = None, **algo_params)
     elif algo_name == "RandomSearch":
         from random_search import RandomSearch
         algo = RandomSearch
+    elif algo_name == "ExhaustiveExploration":
+        from exhaustive_exploration import ExhaustiveExploration
+        algo = ExhaustiveExploration
     else:
         raise ValueError("Unknown algo: " + algo_name)
 
