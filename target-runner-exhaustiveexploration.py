@@ -42,4 +42,4 @@ with open(outfilename, 'w') as sys.stdout:
 sys.stdout = stdout
 print(df["Fitness"].min())
 # remove tmp file.
-#os.remove(outfilename)
+os.remove(outfilename)
