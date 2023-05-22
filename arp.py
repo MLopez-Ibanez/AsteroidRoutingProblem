@@ -40,7 +40,8 @@ class CommonProblem:
 
     def to_Bounds(self):
         return Bounds(lb = self.lower, ub = self.upper)
-        
+
+    @classmethod
     def f(self, cost, time):
         return cost + self.cost_time_tradeoff * time 
 
@@ -128,7 +129,7 @@ class Spaceship:
         ast_dist = distance.cdist(ship_r, ast_r, 'euclidean')
         print(f'diff_r[0]={ast_dist[0]}, energy_diff[0]={energy_difference[0]}')
         ast_dist /= 1.5e+8
-        ast_dist += 0.1 *energy_difference
+        ast_dist += 0.1 * energy_difference
         return asteroids[np.argmin(ast_dist)]
 
     def get_euclidean_nearest(self, asteroids):
@@ -204,6 +205,7 @@ class AsteroidRoutingProblem(Problem):
     
     def __init__(self, n, seed):
         self.asteroids = Asteroids(n, seed=seed)
+        self.get_ast_orbit = asteroids.get_orbit
         self.n = n
         self.seed = seed
         super().__init__(instance_name = str(n) + "_" + str(seed))
@@ -225,6 +227,26 @@ class AsteroidRoutingProblem(Problem):
             sol.step(k)
 
         return sol.x, sol.f
-                
+
+    def get_euclidean_distance(self, from_id, to_id, time):
+        """Return euclidean distance from one asteroid to a list of asteroids at a particular time:
+
+        from_id : asteroid ID
+        
+        to_id : List of asteroid IDs
+
+        time : time (relative to START_EPOCH).
+        """
+        epoch = START_EPOCH + time
+        from_r = self.get_ast_orbit(from_id).propagate(epoch).r.to_value()
+        ast_r = np.array([ self.get_ast_orbit(ast_id).propagate(epoch).r.to_value() for ast_id in to_id ])
+        return distance.cdist(from_r, ast_r, 'euclidean')
+
+    def evaluate_transfer(from_id, to_id, t0, t1):
+        """Calculate objective function value of going from one asteroid to another departing at t0 and arriving at t1."""
+        man, to_orbit = two_shot_transfer(self.get_ast_orbit(from_id), self.get_ast_orbit(to_id), t0=t0, t1=t1-t0)
+        cost = man.get_total_cost().value
+        return CommonProblem.f(cost, t1)
+
     def fitness_nosave(self, x):
         return self.CompleteSolution(x).f
