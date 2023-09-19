@@ -6,3 +6,4 @@ scipy==1.10.0
 astroquery==0.4.3
 numba==0.54.1
 pyerfa==1.7
+astropy==5.3.3
