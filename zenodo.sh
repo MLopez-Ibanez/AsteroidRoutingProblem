@@ -5,7 +5,7 @@ if [ -r $zipfile ]; then
     rm -f $zipfile
 fi
 
-cat << EOF | zip --exclude \*~ \*__pycache__ \*.pyc -r $zipfile -@
+cat << EOF | zip -x \*~ "__pycache__" \*.pyc @ -r $zipfile -@
 README.md
 0-setup.sh
 1-launch_exps.sh

@@ -1,6 +1,7 @@
 import numpy as np
 from space_util import (
     Asteroids,
+    to_timedelta,
     transfer_from_Earth,
     two_shot_transfer,
     START_EPOCH,
@@ -109,14 +110,14 @@ class Spaceship:
         return self.visit(ast_id, **kwargs)
 
     def visit(self, ast_id, **kwargs):
-        epoch = START_EPOCH + self.x.sum()
+        epoch = START_EPOCH + to_timedelta(self.x.sum())
         from_orbit = self.orbit.propagate(epoch)
         to_orbit = self.get_ast_orbit(ast_id)
         self.optimize(ast_id, VisitProblem(from_orbit, to_orbit), **kwargs)
         return self
 
     def get_energy_nearest(self, asteroids):
-        epoch = START_EPOCH + self.x.sum()
+        epoch = START_EPOCH + to_timedelta(self.x.sum())
         ship = self.orbit.propagate(epoch)
         ship_r = ship.r.to_value()[None, :] # Convert it to 1-row 3-cols matrix
         ship_v = ship.v.to_value()[None, :]
@@ -133,7 +134,7 @@ class Spaceship:
         return asteroids[np.argmin(ast_dist)]
 
     def get_euclidean_nearest(self, asteroids):
-        epoch = START_EPOCH + self.x.sum()
+        epoch = START_EPOCH + to_timedelta(self.x.sum())
         ship = self.orbit.propagate(epoch)
         ship_r = ship.r.to_value()[None,:] # Convert it to 1-row 3-cols matrix
         ast_r = np.array([ self.get_ast_orbit(ast_id).propagate(epoch).r.to_value() for ast_id in asteroids ])
@@ -205,7 +206,7 @@ class AsteroidRoutingProblem(Problem):
     
     def __init__(self, n, seed):
         self.asteroids = Asteroids(n, seed=seed)
-        self.get_ast_orbit = asteroids.get_orbit
+        self.get_ast_orbit = self.asteroids.get_orbit
         self.n = n
         self.seed = seed
         super().__init__(instance_name = str(n) + "_" + str(seed))
@@ -237,12 +238,12 @@ class AsteroidRoutingProblem(Problem):
 
         time : time (relative to START_EPOCH).
         """
-        epoch = START_EPOCH + time
+        epoch = START_EPOCH + to_timedelta(time)
         from_r = self.get_ast_orbit(from_id).propagate(epoch).r.to_value()
         ast_r = np.array([ self.get_ast_orbit(ast_id).propagate(epoch).r.to_value() for ast_id in to_id ])
         return distance.cdist(from_r, ast_r, 'euclidean')
 
-    def evaluate_transfer(from_id, to_id, t0, t1):
+    def evaluate_transfer(self,from_id, to_id, t0, t1):
         """Calculate objective function value of going from one asteroid to another departing at t0 and arriving at t1."""
         man, to_orbit = two_shot_transfer(self.get_ast_orbit(from_id), self.get_ast_orbit(to_id), t0=t0, t1=t1-t0)
         cost = man.get_total_cost().value

@@ -1,12 +1,15 @@
 from numpy import deg2rad
 from astropy import units as u
-from astropy.time import Time
+from astropy.time import Time,TimeDelta
 from poliastro.core.util import spherical_to_cartesian
 from poliastro.core.angles import M_to_E, E_to_nu
 from poliastro.bodies import Body
 from poliastro.twobody import Orbit
 from poliastro.frames import Planes
 from poliastro.maneuver import Maneuver
+
+def to_timedelta(x):
+    return x * u.day
 
 def MJD_to_Time(x):
     return Time(x, scale='ut1', format='mjd')
@@ -109,10 +112,10 @@ def transfer_from_Earth(to_orbit, t0, t1, t2,
     if v is None:
         v = spherical_to_cartesian(v_spherical)
         
-    launch_epoch = START_EPOCH + t0
+    launch_epoch = START_EPOCH + to_time_delta(t0)
     intermediate_orbit = launch_from_Earth(launch_epoch, launch_v = v)
-    intermediate_orbit = intermediate_orbit.propagate(launch_epoch + t1)
-    epoch = START_EPOCH + (t0 + t1 + t2)
+    intermediate_orbit = intermediate_orbit.propagate(launch_epoch + to_timedelta(t1))
+    epoch = START_EPOCH + to_timedelta(t0 + t1 + t2)
     assert epoch.value < LAST_EPOCH.value
     to_orbit = to_orbit.propagate(epoch)
     mann = Maneuver.lambert(intermediate_orbit, to_orbit)
@@ -120,8 +123,8 @@ def transfer_from_Earth(to_orbit, t0, t1, t2,
     
 
 def two_shot_transfer(from_orbit, to_orbit, t0, t1):
-    from_orbit = from_orbit.propagate(from_orbit.epoch + t0)
-    epoch = from_orbit.epoch + t1
+    from_orbit = from_orbit.propagate(from_orbit.epoch + to_timedelta(t0))
+    epoch = from_orbit.epoch + to_timedelta(t1)
     to_orbit = to_orbit.propagate(epoch)
     #assert epoch.value < LAST_EPOCH.value
     try:
