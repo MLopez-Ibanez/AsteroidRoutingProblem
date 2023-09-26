@@ -123,12 +123,14 @@ def transfer_from_Earth(to_orbit, t0, t1, t2,
     
 
 def two_shot_transfer(from_orbit, to_orbit, t0, t1):
+    assert t0 >= 0
+    assert t1 > 0
     from_orbit = from_orbit.propagate(from_orbit.epoch + to_timedelta(t0))
     epoch = from_orbit.epoch + to_timedelta(t1)
     to_orbit = to_orbit.propagate(epoch)
     #assert epoch.value < LAST_EPOCH.value
     try:
-        mann = Maneuver.lambert(from_orbit, to_orbit)
+        man = Maneuver.lambert(from_orbit, to_orbit)
     except Exception as e:
         e.args = (e.args if e.args else tuple())
         print(f'two_shot_transfer failed: {type(e)} {str(e.args)}: {from_orbit.rv()} {from_orbit.epoch} {to_orbit.rv()} {to_orbit.epoch} {t0} {t1}')
@@ -138,5 +140,5 @@ def two_shot_transfer(from_orbit, to_orbit, t0, t1):
         return (Maneuver((0 * u.s, [1e6, 1e6, 1e6] * u.km / u.s),
                          (LAST_EPOCH.value * SEC_PER_DAY * u.s, [1e6, 1e6, 1e6] * u.km / u.s)),
                 to_orbit)
-    return mann, to_orbit
+    return man, to_orbit
 

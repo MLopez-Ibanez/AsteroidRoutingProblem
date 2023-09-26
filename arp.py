@@ -243,9 +243,11 @@ class AsteroidRoutingProblem(Problem):
         ast_r = np.array([ self.get_ast_orbit(ast_id).propagate(epoch).r.to_value() for ast_id in to_id ])
         return distance.cdist(from_r, ast_r, 'euclidean')
 
-    def evaluate_transfer(self,from_id, to_id, t0, t1):
-        """Calculate objective function value of going from one asteroid to another departing at t0 and arriving at t1."""
-        man, to_orbit = two_shot_transfer(self.get_ast_orbit(from_id), self.get_ast_orbit(to_id), t0=t0, t1=t1-t0)
+    def evaluate_transfer(self, from_id, to_id, t0, t1):
+        """Calculate objective function value of going from one asteroid to another departing at t0 and arriving at t1. An asteroid ID of -1 denotes Earth."""
+        from_orbit = Earth if from_id == -1 else self.get_ast_orbit(from_id)
+        to_orbit = Earth if to_id == -1 else self.get_ast_orbit(to_id)
+        man, to_orbit = two_shot_transfer(from_orbit, to_orbit, t0=t0, t1=t1-t0)
         cost = man.get_total_cost().value
         return CommonProblem.f(cost, t1)
 
