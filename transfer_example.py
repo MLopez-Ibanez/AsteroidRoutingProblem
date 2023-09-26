@@ -1,9 +1,6 @@
 from arp import AsteroidRoutingProblem
 from space_util import (
-    Asteroids,
-    to_timedelta,
     two_shot_transfer,
-    START_EPOCH,
 )
 
 arp_instance = AsteroidRoutingProblem(10, 42)
