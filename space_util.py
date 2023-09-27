@@ -123,8 +123,7 @@ def transfer_from_Earth(to_orbit, t0, t1, t2,
     
 
 def two_shot_transfer(from_orbit, to_orbit, t0, t1):
-    assert t0 >= 0
-    assert t1 > 0
+    assert t0 >= 0 and t1 > 0,f'It must be true that t0={t0} >= 0 and t1={t1} > 0'
     from_orbit = from_orbit.propagate(from_orbit.epoch + to_timedelta(t0))
     epoch = from_orbit.epoch + to_timedelta(t1)
     to_orbit = to_orbit.propagate(epoch)
