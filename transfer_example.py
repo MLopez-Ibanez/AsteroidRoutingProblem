@@ -52,3 +52,6 @@ print(best)
 f, t0, t1 = arp_instance.optimize_transfer(from_id, to_id, bounds_t0 = (0,730), bounds_t1 = (1,730))
 print(f"t0={t0}, t1={t1}, f={f}")
 
+f, t0, t1 = arp_instance.optimize_transfer(-1, 9, bounds_t0 = (730,1000), bounds_t1 = (1,730))
+print(f"t0={t0}, t1={t1}, f={f}")
+
