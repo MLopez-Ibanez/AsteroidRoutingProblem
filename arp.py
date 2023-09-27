@@ -243,13 +243,28 @@ class AsteroidRoutingProblem(Problem):
         ast_r = np.array([ self.get_ast_orbit(ast_id).propagate(epoch).r.to_value() for ast_id in to_id ])
         return distance.cdist(from_r, ast_r, 'euclidean')
 
+    def _evaluate_transfer_orbit(self, from_orbit, to_orbit, t0, t1):
+        man, _ = two_shot_transfer(from_orbit, to_orbit, t0=t0, t1=t1-t0)
+        cost = man.get_total_cost().value
+        return CommonProblem.f(cost, t1)
+
     def evaluate_transfer(self, from_id, to_id, t0, t1):
         """Calculate objective function value of going from one asteroid to another departing at t0 and arriving at t1. An asteroid ID of -1 denotes Earth."""
         from_orbit = Earth if from_id == -1 else self.get_ast_orbit(from_id)
         to_orbit = Earth if to_id == -1 else self.get_ast_orbit(to_id)
-        man, to_orbit = two_shot_transfer(from_orbit, to_orbit, t0=t0, t1=t1-t0)
-        cost = man.get_total_cost().value
-        return CommonProblem.f(cost, t1)
-
+        return self._evaluate_transfer_orbit(from_orbit, to_orbit, t0, t1)
+    
+    def optimize_transfer(self, from_id, to_id, bounds_t0, bounds_t1, x0 = (0,30),
+                          method = 'SLSQP', options = dict(maxiter=1000)):
+        from_orbit = Earth if from_id == -1 else self.get_ast_orbit(from_id)
+        to_orbit = Earth if to_id == -1 else self.get_ast_orbit(to_id)
+        res = minimize(lambda x: self._evaluate_transfer_orbit(from_orbit, to_orbit, x[0], x[0] + x[1]),
+                       x0 = x0, bounds = (bounds_t0, bounds_t1), method = method, options = options)
+        # Round to integers
+        t0, t1 = np.round(res.x)
+        # Evaluate after rounding.
+        fun = self._evaluate_transfer_orbit(from_orbit, to_orbit, t0, t1)
+        return (fun, t0, t1)
+        
     def fitness_nosave(self, x):
         return self.CompleteSolution(x).f
