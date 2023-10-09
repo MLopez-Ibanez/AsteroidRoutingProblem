@@ -49,9 +49,11 @@ best = arp_instance.evaluate_transfer(from_id, to_id, int(res.x[0]), int(res.x[1
 print(best)
 
 # Simpler:
-f, t0, t1 = arp_instance.optimize_transfer(from_id, to_id, bounds_t0 = (0,730), bounds_t1 = (1,730))
+f, t0, t1 = arp_instance.optimize_transfer(from_id, to_id, t0_bounds = (0,730), t1_bounds = (1,730))
 print(f"t0={t0}, t1={t1}, f={f}")
 
-f, t0, t1 = arp_instance.optimize_transfer(-1, 9, bounds_t0 = (730,1000), bounds_t1 = (1,730))
+f, t0, t1 = arp_instance.optimize_transfer(-1, 9, t0_bounds = (730,1000), t1_bounds = (1,730))
 print(f"t0={t0}, t1={t1}, f={f}")
+
+f, t0, t1 = arp_instance.optimize_transfer(8, 1,(0,730), (0.01,730), starting_guess = [0,30], max_iterations = 1000)
 

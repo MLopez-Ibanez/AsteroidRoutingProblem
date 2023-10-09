@@ -254,18 +254,14 @@ class AsteroidRoutingProblem(Problem):
         to_orbit = Earth if to_id == -1 else self.get_ast_orbit(to_id)
         return self._evaluate_transfer_orbit(from_orbit, to_orbit, t0, t1)
     
-    def optimize_transfer(self, from_id, to_id, bounds_t0, bounds_t1,
-                          method = 'SLSQP', options = dict(maxiter=1000)):
-        x0 = (0.5*(bounds_t0[1] - bounds_t0[0]), 0.5*(bounds_t1[1] - bounds_t1[0]))
+    def optimize_transfer(self, from_id, to_id, t0_bounds, t1_bounds,
+                          starting_guess = (0,30), max_iterations=1000):
         from_orbit = Earth if from_id == -1 else self.get_ast_orbit(from_id)
         to_orbit = Earth if to_id == -1 else self.get_ast_orbit(to_id)
         res = minimize(lambda x: self._evaluate_transfer_orbit(from_orbit, to_orbit, x[0], x[0] + x[1]),
-                       x0 = x0, bounds = (bounds_t0, bounds_t1), method = method, options = options)
-        # Round to integers
-        t0, t1 = np.round(res.x)
-        # Evaluate after rounding.
-        fun = self._evaluate_transfer_orbit(from_orbit, to_orbit, t0, t0+t1)
-        return (fun, t0, t1)
+                       x0 = starting_guess, bounds = (t0_bounds, t1_bounds), method =  'SLSQP',
+                       options = dict(maxiter=max_iterations))
+        return (res.fun, res.x[0], res.x[1])
         
     def fitness_nosave(self, x):
         return self.CompleteSolution(x).f
