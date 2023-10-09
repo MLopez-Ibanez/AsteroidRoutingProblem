@@ -2,15 +2,32 @@ from arp import AsteroidRoutingProblem
 from space_util import (
     two_shot_transfer,
 )
+import numpy as np
 
 arp_instance = AsteroidRoutingProblem(10, 42)
 
+# Build nearest neighbor solution
+from_id = -1 # From Earth
+unvisited_ids = np.arange(arp_instance.n)
+t0 = 0
+fun = 0.0
+while len(unvisited_ids) > 0:
+    to_id = arp_instance.get_nearest_neighbor_euclidean(from_id = from_id, unvisited_ids = unvisited_ids, current_time = t0)
+    f, t0, t1 = arp_instance.optimize_transfer(from_id, to_id, (t0,t0+730), (1,730), starting_guess = [t0, 30], max_iterations = 1000)
+    unvisited_ids = np.setdiff1d(unvisited_ids, to_id)
+    fun += f
+    print(f'Departs from {from_id} at {t0} and arrives at {to_id} at {t0+t1}, total cost = {fun}')
+    from_id = to_id
+    t0 += t1
+
+    
 from_id = -1 # From Earth
 to_id = 1
 t0 = 1
 t1 = 10
 result = arp_instance.evaluate_transfer(from_id, to_id, t0, t1)
 print (result)
+
 
 # Brute-force
 from_id = 1
@@ -55,5 +72,5 @@ print(f"t0={t0}, t1={t1}, f={f}")
 f, t0, t1 = arp_instance.optimize_transfer(-1, 9, t0_bounds = (730,1000), t1_bounds = (1,730))
 print(f"t0={t0}, t1={t1}, f={f}")
 
-f, t0, t1 = arp_instance.optimize_transfer(8, 1,(0,730), (0.01,730), starting_guess = [0,30], max_iterations = 1000)
+f, t0, t1 = arp_instance.optimize_transfer(8, 1, (0,730), (0.01,730), starting_guess = [0,30], max_iterations = 1000)
 

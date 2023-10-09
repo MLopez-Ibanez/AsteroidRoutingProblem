@@ -206,7 +206,7 @@ class AsteroidRoutingProblem(Problem):
     
     def __init__(self, n, seed):
         self.asteroids = Asteroids(n, seed=seed)
-        self.get_ast_orbit = self.asteroids.get_orbit
+        self.get_ast_orbit = lambda x: Earth if x == -1 else self.asteroids.get_orbit(x)
         self.n = n
         self.seed = seed
         super().__init__(instance_name = str(n) + "_" + str(seed))
@@ -250,18 +250,26 @@ class AsteroidRoutingProblem(Problem):
 
     def evaluate_transfer(self, from_id, to_id, t0, t1):
         """Calculate objective function value of going from one asteroid to another departing at t0 and arriving at t1. An asteroid ID of -1 denotes Earth."""
-        from_orbit = Earth if from_id == -1 else self.get_ast_orbit(from_id)
-        to_orbit = Earth if to_id == -1 else self.get_ast_orbit(to_id)
+        from_orbit = self.get_ast_orbit(from_id)
+        to_orbit = self.get_ast_orbit(to_id)
         return self._evaluate_transfer_orbit(from_orbit, to_orbit, t0, t1)
     
     def optimize_transfer(self, from_id, to_id, t0_bounds, t1_bounds,
                           starting_guess = (0,30), max_iterations=1000):
-        from_orbit = Earth if from_id == -1 else self.get_ast_orbit(from_id)
-        to_orbit = Earth if to_id == -1 else self.get_ast_orbit(to_id)
+        from_orbit = self.get_ast_orbit(from_id)
+        to_orbit = self.get_ast_orbit(to_id)
         res = minimize(lambda x: self._evaluate_transfer_orbit(from_orbit, to_orbit, x[0], x[0] + x[1]),
                        x0 = starting_guess, bounds = (t0_bounds, t1_bounds), method =  'SLSQP',
                        options = dict(maxiter=max_iterations))
         return (res.fun, res.x[0], res.x[1])
-        
+
+    def get_nearest_neighbor_euclidean(self, from_id, unvisited_ids, current_time):
+        epoch = START_EPOCH + to_timedelta(current_time)
+        from_orbit = self.get_ast_orbit(from_id).propagate(epoch)
+        from_r = from_orbit.r.to_value()[None,:] # Convert it to 1-row 3-cols matrix
+        ast_r = np.array([ self.get_ast_orbit(ast_id).propagate(epoch).r.to_value() for ast_id in unvisited_ids ])
+        ast_dist = distance.cdist(from_r, ast_r, 'euclidean')
+        return unvisited_ids[np.argmin(ast_dist)]
+            
     def fitness_nosave(self, x):
         return self.CompleteSolution(x).f
