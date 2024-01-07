@@ -243,30 +243,53 @@ class AsteroidRoutingProblem(Problem):
         ast_r = np.array([ self.get_ast_orbit(ast_id).propagate(epoch).r.to_value() for ast_id in to_id ])
         return distance.cdist(from_r, ast_r, 'euclidean')
 
-    def _evaluate_transfer_orbit(self, from_orbit, to_orbit, t0, t1):
+    def _evaluate_transfer_orbit(self, from_orbit, to_orbit, t0, t1, only_cost):
         man, _ = two_shot_transfer(from_orbit, to_orbit, t0=t0, t1=t1-t0)
         cost = man.get_total_cost().value
+        if only_cost:
+            return cost
         return CommonProblem.f(cost, t1)
 
-    def evaluate_transfer(self, from_id, to_id, t0, t1):
+    def evaluate_transfer(self, from_id, to_id, t0, t1, only_cost = False):
         """Calculate objective function value of going from one asteroid to another departing at t0 and arriving at t1. An asteroid ID of -1 denotes Earth."""
         from_orbit = self.get_ast_orbit(from_id)
         to_orbit = self.get_ast_orbit(to_id)
-        return self._evaluate_transfer_orbit(from_orbit, to_orbit, t0, t1)
-    
-    def optimize_transfer(self, from_id, to_id, t0_bounds, t1_bounds,
-                          starting_guess = (0,30), max_iterations=1000):
-        from_orbit = self.get_ast_orbit(from_id)
-        to_orbit = self.get_ast_orbit(to_id)
-        res = minimize(lambda x: self._evaluate_transfer_orbit(from_orbit, to_orbit, x[0], x[0] + x[1]),
+        return self._evaluate_transfer_orbit(from_orbit, to_orbit, t0, t1, only_cost = only_cost)
+
+    def evaluate_sequence(self, sequence, t0_bounds, t1_bounds):
+
+        seq_orbits = [ self.get_ast_orbit(i) for i in sequence ]
+        i = 1
+        while i < len(sequence):
+            from_orbit = seq_orbits[i-1]
+            to_orbit = seq_orbits[i]
+            self.optimize_transfer_orbit(from_orbit, to_orbit, t0_bounds, t1_bounds)
+        return
+
+    def optimize_transfer_orbit(self, from_orbit, to_orbit, t0_bounds, t1_bounds,
+                                starting_guess, max_iterations, only_cost = False):
+        res = minimize(lambda x: self._evaluate_transfer_orbit(from_orbit, to_orbit, x[0], x[0] + x[1], only_cost = only_cost),
                        x0 = starting_guess, bounds = (t0_bounds, t1_bounds), method =  'SLSQP',
                        options = dict(maxiter=max_iterations))
         return (res.fun, res.x[0], res.x[1])
 
+    def optimize_transfer_free_wait(self, from_id, to_id, t0_bounds, t1_bounds,
+                          starting_guess = (0,30), max_iterations=1000):
+        from_orbit = self.get_ast_orbit(from_id)
+        to_orbit = self.get_ast_orbit(to_id)
+        return self.optimize_transfer_orbit(from_orbit, to_orbit, t0_bounds, t1_bounds,
+                                            starting_guess, max_iterations, only_cost = True)
+
+    def optimize_transfer(self, from_id, to_id, t0_bounds, t1_bounds,
+                          starting_guess = (0,30), max_iterations=1000):
+        from_orbit = self.get_ast_orbit(from_id)
+        to_orbit = self.get_ast_orbit(to_id)
+        return self.optimize_transfer_orbit(from_orbit, to_orbit, t0_bounds, t1_bounds,
+                                            starting_guess, max_iterations, only_cost = False)
+    
     def get_nearest_neighbor_euclidean(self, from_id, unvisited_ids, current_time):
         epoch = START_EPOCH + to_timedelta(current_time)
-        from_orbit = self.get_ast_orbit(from_id).propagate(epoch)
-        from_r = from_orbit.r.to_value()[None,:] # Convert it to 1-row 3-cols matrix
+        from_orbit = self.get_ast_orbit(from_id).propagate(epoch).r.to_value()[None,:] # Convert it to 1-row 3-cols matrix
         ast_r = np.array([ self.get_ast_orbit(ast_id).propagate(epoch).r.to_value() for ast_id in unvisited_ids ])
         ast_dist = distance.cdist(from_r, ast_r, 'euclidean')
         return unvisited_ids[np.argmin(ast_dist)]
