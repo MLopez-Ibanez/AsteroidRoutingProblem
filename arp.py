@@ -26,8 +26,8 @@ def get_default_opts(method, tol = 1e-4, adaptive = True, eps = 1.49011611938476
     return options[method]
 
 class CommonProblem:
-    TRANSFER_BOUNDS = [(0., 730.)] # (0 days, 2 years)
-    VISIT_BOUNDS = [(1., 730.)] # (1 day, 2 years)
+    TRANSFER_BOUNDS = (0., 730.) # (0 days, 2 years)
+    VISIT_BOUNDS = (1., 730.) # (1 day, 2 years)
     #
     cost_time_tradeoff = 2 / 30 # 2 km/s ~ 30 days
 
@@ -59,7 +59,7 @@ class CommonProblem:
         return f
 
 class VisitProblem(CommonProblem):
-    bounds = CommonProblem.TRANSFER_BOUNDS + CommonProblem.VISIT_BOUNDS
+    bounds = [CommonProblem.TRANSFER_BOUNDS, CommonProblem.VISIT_BOUNDS]
     x0 = np.array([1., 30.])
     assert_bounds(x0, bounds)
     print_best = False
@@ -76,6 +76,12 @@ class VisitProblem(CommonProblem):
         time = x.sum()
         f = self.update_best(x, cost, time, man)
         return f
+
+
+def inner_minimize(fun, x0, bounds, method = 'SLSQP', **kwargs):
+    options = get_default_opts(method, **kwargs)
+    res = minimize(fun, x0 = x0, bounds = bounds, method = method, **options)
+    return (res.fun, res.x[0], res.x[1])
 
 
 def optimize_problem(problem, method = 'SLSQP', **kwargs):
@@ -211,9 +217,6 @@ class AsteroidRoutingProblem(Problem):
         self.seed = seed
         super().__init__(instance_name = str(n) + "_" + str(seed))
 
-    def inner_minimize(self, fun, x0, bounds, method = 'SLSQP', options = dict(maxiter=1000)):
-        res = minimize(fun, x0 = x0, bounds = bounds, method = method, options = options)
-        return (res.fun, res.x[0], res.x[1])
 
     def nearest_neighbor(self, x, distance):
         # This could be optimized to avoid re-evaluating
@@ -262,6 +265,8 @@ class AsteroidRoutingProblem(Problem):
         """Here t0 is relative to from_orbit.epoch and t1 is relative to t0"""
         if t0+t1 > bound:
             t1 = bound - t0
+            if t1 < 1:
+                return np.inf
         return self._evaluate_transfer_orbit(from_orbit, to_orbit, t0, t1,
                                              only_cost = only_cost, free_wait = free_wait)
 
@@ -271,36 +276,27 @@ class AsteroidRoutingProblem(Problem):
         to_orbit = self.get_ast_orbit(to_id)
         return self._evaluate_transfer_orbit(from_orbit, to_orbit, t0, t1, only_cost = only_cost, free_wait = free_wait)
 
-    def evaluate_sequence(self, sequence, t0_bounds, t1_bounds):
-        seq_orbits = [ self.get_ast_orbit(i) for i in sequence ]
-        i = 1
-        while i < len(sequence):
-            from_orbit = seq_orbits[i-1]
-            to_orbit = seq_orbits[i]
-            self.optimize_transfer_orbit(from_orbit, to_orbit, t0_bounds, t1_bounds)
-        return
-
     def optimize_transfer_orbit_bounded(self, from_orbit, to_orbit, t_bounds, only_cost = False, free_wait = False):
         min_time = 1
         t0_bounds = (t_bounds[0], t_bounds[1] - min_time)
         t1_bounds = (min_time, t_bounds[1])
         starting_guess = (t_bounds[0], 0.5 * (t_bounds[1] - t_bounds[0]))
-        res = self.inner_minimize(lambda x: self._evaluate_transfer_orbit_bounded(from_orbit, to_orbit, x[0], x[1], bound = t_bounds[1], only_cost = only_cost, free_wait = free_wait),
-                                  x0 = starting_guess, bounds = (t0_bounds, t1_bounds))
+        res = inner_minimize(lambda x: self._evaluate_transfer_orbit_bounded(from_orbit, to_orbit, x[0], x[1], bound = t_bounds[1], only_cost = only_cost, free_wait = free_wait),
+                             x0 = starting_guess, bounds = (t0_bounds, t1_bounds))
         return res
 
-    def optimize_transfer_orbit(self, from_orbit, to_orbit, t0_bounds, t1_bounds,
+    def optimize_transfer_orbit(self, from_orbit, to_orbit, current_time, t0_bounds, t1_bounds,
                                 only_cost = False, free_wait = False):
-        starting_guess = (t0_bounds[0], 0.5 * (t1_bounds[1] - t1_bounds[0]))
-        res = self.inner_minimize(lambda x: self._evaluate_transfer_orbit(from_orbit, to_orbit, x[0], x[1], only_cost = only_cost, free_wait = free_wait),
+        starting_guess = (0, 30)
+        res = inner_minimize(lambda x: self._evaluate_transfer_orbit(from_orbit, to_orbit, current_time + x[0], x[1], only_cost = only_cost, free_wait = free_wait),
                                   x0 = starting_guess, bounds = (t0_bounds, t1_bounds))
         return res
 
-    def optimize_transfer(self, from_id, to_id, t0_bounds, t1_bounds,
+    def optimize_transfer(self, from_id, to_id, current_time, t0_bounds, t1_bounds,
                           only_cost = False, free_wait = False):
         from_orbit = self.get_ast_orbit(from_id)
         to_orbit = self.get_ast_orbit(to_id)
-        return self.optimize_transfer_orbit(from_orbit, to_orbit, t0_bounds, t1_bounds,
+        return self.optimize_transfer_orbit(from_orbit, to_orbit, current_time, t0_bounds, t1_bounds,
                                             only_cost = only_cost, free_wait = free_wait)
     
     def get_nearest_neighbor_euclidean(self, from_id, unvisited_ids, current_time):
@@ -309,6 +305,41 @@ class AsteroidRoutingProblem(Problem):
         ast_r = np.array([ self.get_ast_orbit(ast_id).propagate(epoch).r.to_value() for ast_id in unvisited_ids ])
         ast_dist = distance.cdist(from_r, ast_r, 'euclidean')
         return unvisited_ids[np.argmin(ast_dist)]
-            
+
+    def build_nearest_neighbor(self):
+        from_id = -1 # From Earth
+        unvisited_ids = np.arange(self.n)
+        f_total = 0.0
+        x = []
+        s = []
+        while len(unvisited_ids) > 0:
+            current_time = sum(x)
+            to_id = self.get_nearest_neighbor_euclidean(from_id = from_id, unvisited_ids = unvisited_ids, current_time = current_time)
+            f, t0, t1 = self.optimize_transfer(from_id, to_id, current_time = current_time, t0_bounds = CommonProblem.TRANSFER_BOUNDS, t1_bounds = CommonProblem.VISIT_BOUNDS)
+            unvisited_ids = np.setdiff1d(unvisited_ids, to_id)
+            f_total += f
+            print(f'Departs from {from_id} at time {current_time + t0} after waiting {t0} days and arrives at {to_id} at time {current_time + t0 + t1} after travelling {t1} days, total cost = {f_total}')
+            from_id = to_id
+            x += [t0, t1]
+            s += [ to_id ]
+        return (f_total, s, x)
+
+    def evaluate_sequence(self, sequence):
+        """Sequence does not contain -1 (Earth), we add it inside this function."""
+        seq_orbits = [ Earth ] + [ self.get_ast_orbit(i) for i in sequence ]
+        sequence = [ -1 ] + list(sequence)
+        f_total = 0.0
+        x = []
+        for i in range(1, len(seq_orbits)):
+            current_time = sum(x)
+            from_orbit = seq_orbits[i-1]
+            to_orbit = seq_orbits[i]
+            f, t0, t1 = self.optimize_transfer_orbit(from_orbit, to_orbit, current_time, t0_bounds = CommonProblem.TRANSFER_BOUNDS, t1_bounds = CommonProblem.VISIT_BOUNDS)
+            f_total += f
+            print(f'Departs from {sequence[i-1]} at time {current_time + t0} after waiting {t0} days and arrives at {sequence[i]} at time {current_time + t0 + t1} after travelling {t1} days, total cost = {f_total}')
+            x += [t0, t1]
+        return (f_total, x)
+
+
     def fitness_nosave(self, x):
         return self.CompleteSolution(x).f

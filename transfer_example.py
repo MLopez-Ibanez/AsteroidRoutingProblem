@@ -1,24 +1,17 @@
 from arp import AsteroidRoutingProblem
 from space_util import (
     two_shot_transfer,
+    START_EPOCH,
 )
 import numpy as np
 
 arp_instance = AsteroidRoutingProblem(10, 42)
 
 # Build nearest neighbor solution
-from_id = -1 # From Earth
-unvisited_ids = np.arange(arp_instance.n)
-t0 = 0
-fun = 0.0
-while len(unvisited_ids) > 0:
-    to_id = arp_instance.get_nearest_neighbor_euclidean(from_id = from_id, unvisited_ids = unvisited_ids, current_time = t0)
-    f, t0, t1 = arp_instance.optimize_transfer(from_id, to_id, (t0,t0+730), (1,730))
-    unvisited_ids = np.setdiff1d(unvisited_ids, to_id)
-    fun += f
-    print(f'Departs from {from_id} at {t0} and arrives at {to_id} at {t0+t1}, total cost = {fun}')
-    from_id = to_id
-    t0 += t1
+f, s, x = arp_instance.build_nearest_neighbor()
+print(f"sequence = {s}, t = {x}, cost = {f}")
+f, x = arp_instance.evaluate_sequence(s)
+print(f"t = {x}, cost = {f}")
 
     
 from_id = -1 # From Earth
