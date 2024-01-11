@@ -211,6 +211,10 @@ class AsteroidRoutingProblem(Problem):
         self.seed = seed
         super().__init__(instance_name = str(n) + "_" + str(seed))
 
+    def inner_minimize(self, fun, x0, bounds, method = 'SLSQP', options = dict(maxiter=1000)):
+        res = minimize(fun, x0 = x0, bounds = bounds, method = method, options = options)
+        return (res.fun, res.x[0], res.x[1])
+
     def nearest_neighbor(self, x, distance):
         # This could be optimized to avoid re-evaluating
         sol = self.PartialSolution(x)
@@ -243,21 +247,31 @@ class AsteroidRoutingProblem(Problem):
         ast_r = np.array([ self.get_ast_orbit(ast_id).propagate(epoch).r.to_value() for ast_id in to_id ])
         return distance.cdist(from_r, ast_r, 'euclidean')
 
-    def _evaluate_transfer_orbit(self, from_orbit, to_orbit, t0, t1, only_cost):
-        man, _ = two_shot_transfer(from_orbit, to_orbit, t0=t0, t1=t1-t0)
+    def _evaluate_transfer_orbit(self, from_orbit, to_orbit, t0, t1, only_cost, free_wait):
+        """Here t0 is relative to from_orbit.epoch and t1 is relative to t0"""
+        man, _ = two_shot_transfer(from_orbit, to_orbit, t0=t0, t1=t1)
         cost = man.get_total_cost().value
+        assert not (only_cost and free_wait)
         if only_cost:
             return cost
-        return CommonProblem.f(cost, t1)
+        if free_wait:
+            t0 = 0
+        return CommonProblem.f(cost, t0+t1)
 
-    def evaluate_transfer(self, from_id, to_id, t0, t1, only_cost = False):
-        """Calculate objective function value of going from one asteroid to another departing at t0 and arriving at t1. An asteroid ID of -1 denotes Earth."""
+    def _evaluate_transfer_orbit_bounded(self, from_orbit, to_orbit, t0, t1, bound, only_cost, free_wait):
+        """Here t0 is relative to from_orbit.epoch and t1 is relative to t0"""
+        if t0+t1 > bound:
+            t1 = bound - t0
+        return self._evaluate_transfer_orbit(from_orbit, to_orbit, t0, t1,
+                                             only_cost = only_cost, free_wait = free_wait)
+
+    def evaluate_transfer(self, from_id, to_id, t0, t1, only_cost = False, free_wait = False):
+        """Calculate objective function value of going from one asteroid to another departing at t0 and flying for a duration of t1. An asteroid ID of -1 denotes Earth."""
         from_orbit = self.get_ast_orbit(from_id)
         to_orbit = self.get_ast_orbit(to_id)
-        return self._evaluate_transfer_orbit(from_orbit, to_orbit, t0, t1, only_cost = only_cost)
+        return self._evaluate_transfer_orbit(from_orbit, to_orbit, t0, t1, only_cost = only_cost, free_wait = free_wait)
 
     def evaluate_sequence(self, sequence, t0_bounds, t1_bounds):
-
         seq_orbits = [ self.get_ast_orbit(i) for i in sequence ]
         i = 1
         while i < len(sequence):
@@ -266,30 +280,32 @@ class AsteroidRoutingProblem(Problem):
             self.optimize_transfer_orbit(from_orbit, to_orbit, t0_bounds, t1_bounds)
         return
 
-    def optimize_transfer_orbit(self, from_orbit, to_orbit, t0_bounds, t1_bounds,
-                                starting_guess, max_iterations, only_cost = False):
-        res = minimize(lambda x: self._evaluate_transfer_orbit(from_orbit, to_orbit, x[0], x[0] + x[1], only_cost = only_cost),
-                       x0 = starting_guess, bounds = (t0_bounds, t1_bounds), method =  'SLSQP',
-                       options = dict(maxiter=max_iterations))
-        return (res.fun, res.x[0], res.x[1])
+    def optimize_transfer_orbit_bounded(self, from_orbit, to_orbit, t_bounds, only_cost = False, free_wait = False):
+        min_time = 1
+        t0_bounds = (t_bounds[0], t_bounds[1] - min_time)
+        t1_bounds = (min_time, t_bounds[1])
+        starting_guess = (t_bounds[0], 0.5 * (t_bounds[1] - t_bounds[0]))
+        res = self.inner_minimize(lambda x: self._evaluate_transfer_orbit_bounded(from_orbit, to_orbit, x[0], x[1], bound = t_bounds[1], only_cost = only_cost, free_wait = free_wait),
+                                  x0 = starting_guess, bounds = (t0_bounds, t1_bounds))
+        return res
 
-    def optimize_transfer_free_wait(self, from_id, to_id, t0_bounds, t1_bounds,
-                          starting_guess = (0,30), max_iterations=1000):
-        from_orbit = self.get_ast_orbit(from_id)
-        to_orbit = self.get_ast_orbit(to_id)
-        return self.optimize_transfer_orbit(from_orbit, to_orbit, t0_bounds, t1_bounds,
-                                            starting_guess, max_iterations, only_cost = True)
+    def optimize_transfer_orbit(self, from_orbit, to_orbit, t0_bounds, t1_bounds,
+                                only_cost = False, free_wait = False):
+        starting_guess = (t0_bounds[0], 0.5 * (t1_bounds[1] - t1_bounds[0]))
+        res = self.inner_minimize(lambda x: self._evaluate_transfer_orbit(from_orbit, to_orbit, x[0], x[1], only_cost = only_cost, free_wait = free_wait),
+                                  x0 = starting_guess, bounds = (t0_bounds, t1_bounds))
+        return res
 
     def optimize_transfer(self, from_id, to_id, t0_bounds, t1_bounds,
-                          starting_guess = (0,30), max_iterations=1000):
+                          only_cost = False, free_wait = False):
         from_orbit = self.get_ast_orbit(from_id)
         to_orbit = self.get_ast_orbit(to_id)
         return self.optimize_transfer_orbit(from_orbit, to_orbit, t0_bounds, t1_bounds,
-                                            starting_guess, max_iterations, only_cost = False)
+                                            only_cost = only_cost, free_wait = free_wait)
     
     def get_nearest_neighbor_euclidean(self, from_id, unvisited_ids, current_time):
         epoch = START_EPOCH + to_timedelta(current_time)
-        from_orbit = self.get_ast_orbit(from_id).propagate(epoch).r.to_value()[None,:] # Convert it to 1-row 3-cols matrix
+        from_r = self.get_ast_orbit(from_id).propagate(epoch).r.to_value()[None,:] # Convert it to 1-row 3-cols matrix
         ast_r = np.array([ self.get_ast_orbit(ast_id).propagate(epoch).r.to_value() for ast_id in unvisited_ids ])
         ast_dist = distance.cdist(from_r, ast_r, 'euclidean')
         return unvisited_ids[np.argmin(ast_dist)]
