@@ -8,24 +8,30 @@ import numpy as np
 arp_instance = AsteroidRoutingProblem(10, 42)
 
 # Build nearest neighbor solution
-f, s, x = arp_instance.build_nearest_neighbor()
-print(f"sequence = {s}, t = {x}, cost = {f}")
-f, x = arp_instance.evaluate_sequence(s)
-print(f"t = {x}, cost = {f}")
+f, s, x = arp_instance.build_nearest_neighbor(current_time = 0)
+print(f"*** sequence = {s}, t = {x}, cost = {f}\n\n")
+f, x = arp_instance.evaluate_sequence(s, current_time = 0)
+print(f"*** t = {x}, cost = {f}\n\n")
 
-    
+res = arp_instance.optimize_transfer(1, 2, current_time = 574, t0_bounds = (0, 1), t1_bounds = (240, 260))
+print(res)        
+
+res = arp_instance.optimize_transfer_total_time(1, 2, current_time = 574, total_time_bounds = (200,260))
+print(res)        
+
 from_id = -1 # From Earth
 to_id = 1
 t0 = 1 # relative to initial epoch
 t1 = 10 # relative to t1
-result = arp_instance.evaluate_transfer(from_id, to_id, t0, t1)
+result = arp_instance.evaluate_transfer(from_id, to_id, 0, t0, t1)
 print (result)
 
-result = arp_instance.evaluate_transfer(from_id, to_id, t0, t1, only_cost = True)
+result = arp_instance.evaluate_transfer(from_id, to_id, 0, t0, t1, only_cost = True)
 print (result)
 
-result = arp_instance.evaluate_transfer(from_id, to_id, t0, t1, free_wait = True)
+result = arp_instance.evaluate_transfer(from_id, to_id, 0, t0, t1, free_wait = True)
 print (result)
+
 
 
 # Brute-force
