@@ -17,7 +17,7 @@ def assert_bounds(x, bounds):
     assert (x >= bounds[:,0]).all(), f'{x} >= {bounds[:,0]}'
     assert (x <= bounds[:,1]).all(), f'{x} <= {bounds[:,1]}'
 
-def get_default_opts(method, tol = 1e-4, adaptive = True, eps = 1.4901161193847656e-08,
+def get_default_opts(method, tol = 1e-6, adaptive = True, eps = 1.4901161193847656e-08,
                      rhobeg = 1.0, maxls = 20, maxcor = 10, jac = "2-point", maxiter = 1000):
     options = { 'Nelder-Mead' : dict(tol = tol, options = dict(fatol=0.0001, adaptive = adaptive)),
                 'COBYLA' : dict(tol = tol, options=dict(rhobeg = rhobeg)),

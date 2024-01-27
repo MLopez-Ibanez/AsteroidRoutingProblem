@@ -7,6 +7,12 @@ import numpy as np
 
 arp_instance = AsteroidRoutingProblem(10, 42)
 
+res = arp_instance.optimize_transfer(0, 3, current_time = 0, t0_bounds = (0, 13870), t1_bounds = (1, 730), free_wait = True)
+print(res)        
+
+res = arp_instance.optimize_transfer(0, 3, current_time = 69.746826, t0_bounds = (0,2120.2532), t1_bounds = (1, 730), free_wait = True)
+print(res)        
+
 # Build nearest neighbor solution
 f, s, x = arp_instance.build_nearest_neighbor(current_time = 0)
 print(f"*** sequence = {s}, t = {x}, cost = {f}\n\n")
