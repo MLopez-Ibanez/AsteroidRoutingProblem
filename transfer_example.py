@@ -7,6 +7,12 @@ import numpy as np
 
 arp_instance = AsteroidRoutingProblem(10, 42)
 
+res = arp_instance.optimize_transfer(0, 8, current_time = 0, t0_bounds = (0, 5110), t1_bounds = (1, 730), free_wait = True)
+print(res)        
+
+res = arp_instance.optimize_transfer(0, 8, current_time = 126.96358, t0_bounds = (0,4983.0366), t1_bounds = (1, 730), free_wait = True)
+print(res)        
+
 res = arp_instance.optimize_transfer(0, 3, current_time = 0, t0_bounds = (0, 13870), t1_bounds = (1, 730), free_wait = True)
 print(res)        
 

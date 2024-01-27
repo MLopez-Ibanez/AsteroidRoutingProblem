@@ -78,6 +78,20 @@ class VisitProblem(CommonProblem):
         return f
 
 
+def inner_minimize_multistart(fun, deltas, bounds, method = 'SLSQP', constraints = (), **kwargs):
+    options = get_default_opts(method, **kwargs)
+    best_f = np.inf
+    best_t0 = None
+    best_t1 = None
+    for d in deltas:
+        x0 = (bounds[0][0] + d * (bounds[0][1] - bounds[0][0]), min(30, bounds[1][1]))
+        print(f"t0_bounds = {bounds[0]}, t1_bounds = {bounds[1]}, x0 = {x0}")
+        res = minimize(fun, x0 = x0, bounds = bounds, method = method, constraints = constraints, **options)
+        if res.fun < best_f:
+            best_f, best_t0, best_t1 = res.fun, res.x[0], res.x[1] 
+
+    return (best_f, best_t0, best_t1)
+
 def inner_minimize(fun, x0, bounds, method = 'SLSQP', constraints = (), **kwargs):
     options = get_default_opts(method, **kwargs)
     res = minimize(fun, x0 = x0, bounds = bounds, method = method, constraints = constraints, **options)
@@ -297,10 +311,9 @@ class AsteroidRoutingProblem(Problem):
     def optimize_transfer_orbit(self, from_orbit, to_orbit, current_time, t0_bounds, t1_bounds,
                                 only_cost = False, free_wait = False):
         """Here t0_bounds are relative to current_time and t1_bounds are relative to current_time + t0"""
-        starting_guess = (t0_bounds[0], min(30, t1_bounds[1]))
-        print(f"t0_bounds = {t0_bounds}, t1_bounds = {t1_bounds}, x0 = {starting_guess}")
-        res = inner_minimize(lambda x: self._evaluate_transfer_orbit(from_orbit, to_orbit, current_time, x[0], x[1], only_cost = only_cost, free_wait = free_wait),
-                             x0 = starting_guess, bounds = (t0_bounds, t1_bounds))
+        res = inner_minimize_multistart(lambda x: self._evaluate_transfer_orbit(from_orbit, to_orbit, current_time, x[0], x[1],
+                                                                                only_cost = only_cost, free_wait = free_wait),
+                             deltas = [.0, .5, .95], bounds = (t0_bounds, t1_bounds))
         return res
 
     def optimize_transfer(self, from_id, to_id, current_time, t0_bounds, t1_bounds,
