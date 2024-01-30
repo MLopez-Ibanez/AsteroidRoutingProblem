@@ -78,12 +78,13 @@ class VisitProblem(CommonProblem):
         return f
 
 
-def inner_minimize_multistart(fun, deltas, bounds, method = 'SLSQP', constraints = (), **kwargs):
+def inner_minimize_multistart(fun, multi, bounds, method = 'SLSQP', constraints = (), **kwargs):
     options = get_default_opts(method, **kwargs)
     best_f = np.inf
     best_t0 = None
     best_t1 = None
-    for d in deltas:
+    deltas = [ .0, .98, .5, .25, .75, .125, .375, .625, .875]
+    for d in deltas[:multi]:
         x0 = (bounds[0][0] + d * (bounds[0][1] - bounds[0][0]), min(30, bounds[1][1]))
         print(f"t0_bounds = {bounds[0]}, t1_bounds = {bounds[1]}, x0 = {x0}")
         res = minimize(fun, x0 = x0, bounds = bounds, method = method, constraints = constraints, **options)
@@ -294,9 +295,10 @@ class AsteroidRoutingProblem(Problem):
         t1_bounds = (t1_s, t1_f)
         starting_guess = (t0_s, 30)
         print(f"t0_bounds = {t0_bounds}, t1_bounds = {t1_bounds}, x0 = {starting_guess}")
-        cons = ({'type': 'ineq', 'fun': lambda x:  total_time_bounds[1] - (x[0] + x[1]) },
-                {'type': 'ineq', 'fun': lambda x:  x[0] + x[1] - total_time_bounds[0]})
-        res = inner_minimize(lambda x: self._evaluate_transfer_orbit(from_orbit, to_orbit, current_time, x[0], x[1], only_cost = only_cost, free_wait = free_wait),
+        cons = ({'type': 'ineq', 'fun': lambda x: total_time_bounds[1] - (x[0] + x[1]) },
+                {'type': 'ineq', 'fun': lambda x: x[0] + x[1] - total_time_bounds[0]})
+        res = inner_minimize(lambda x: self._evaluate_transfer_orbit(from_orbit, to_orbit, current_time, x[0], x[1],
+                                                                     only_cost = only_cost, free_wait = free_wait),
                              x0 = starting_guess, bounds = (t0_bounds, t1_bounds), constraints = cons)
         return res
         
@@ -309,19 +311,19 @@ class AsteroidRoutingProblem(Problem):
                                                        only_cost = only_cost, free_wait = free_wait)
             
     def optimize_transfer_orbit(self, from_orbit, to_orbit, current_time, t0_bounds, t1_bounds,
-                                only_cost = False, free_wait = False):
+                                only_cost = False, free_wait = False, multi = 1):
         """Here t0_bounds are relative to current_time and t1_bounds are relative to current_time + t0"""
         res = inner_minimize_multistart(lambda x: self._evaluate_transfer_orbit(from_orbit, to_orbit, current_time, x[0], x[1],
                                                                                 only_cost = only_cost, free_wait = free_wait),
-                             deltas = [.0, .5, .95], bounds = (t0_bounds, t1_bounds))
+                             multi = multi, bounds = (t0_bounds, t1_bounds))
         return res
 
     def optimize_transfer(self, from_id, to_id, current_time, t0_bounds, t1_bounds,
-                          only_cost = False, free_wait = False):
+                          only_cost = False, free_wait = False, multi = 1):
         from_orbit = self.get_ast_orbit(from_id)
         to_orbit = self.get_ast_orbit(to_id)
         return self.optimize_transfer_orbit(from_orbit, to_orbit, current_time, t0_bounds, t1_bounds,
-                                            only_cost = only_cost, free_wait = free_wait)
+                                            only_cost = only_cost, free_wait = free_wait, multi = multi)
     
     def get_nearest_neighbor_euclidean(self, from_id, unvisited_ids, current_time):
         epoch = START_EPOCH + to_timedelta(current_time)
