@@ -1,4 +1,5 @@
 from arp import AsteroidRoutingProblem
+from arp_vis import plot_solution
 from space_util import (
     two_shot_transfer,
     START_EPOCH,
@@ -6,6 +7,16 @@ from space_util import (
 import numpy as np
 
 arp_instance = AsteroidRoutingProblem(10, 42)
+
+x = [9,3,8,7,2,6,1,5,4,0]
+res1 = arp_instance.CompleteSolution(np.asarray(x))
+res2 = arp_instance.evaluate_sequence([-1] + x, current_time=0)
+
+#res = plot_solution(arp_instance, [8,3,0,6,7,9,2,4,1,5])
+res1 = arp_instance.CompleteSolution(np.asarray([8,3,0,6,7,9,2,4,1,5]))
+
+res2 = arp_instance.evaluate_sequence([-1,8,3,0,6,7,9,2,4,1,5], current_time=0)
+
 
 res = arp_instance.optimize_transfer(0, 8, current_time = 0, t0_bounds = (0, 5110), t1_bounds = (1, 730), free_wait = True, multi = 3)
 print(res)        

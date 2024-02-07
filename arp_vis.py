@@ -53,6 +53,7 @@ def get_fig_size(width, fraction=1, subplots=(1, 1), ratio = (5**.5 - 1) / 2):
 
 
 def plot_solution(self, x, ax = None):
+    x = np.asarray(x)
     sol = self.CompleteSolution(x)
     t = sol.ship.x
     print(t)

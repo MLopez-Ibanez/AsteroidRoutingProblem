@@ -60,7 +60,7 @@ class CommonProblem:
 
 class VisitProblem(CommonProblem):
     bounds = [CommonProblem.TRANSFER_BOUNDS, CommonProblem.VISIT_BOUNDS]
-    x0 = np.array([1., 30.])
+    x0 = np.array([1., 30.]) # FIXME: perhaps it should be [0., 30.] to match the optimize_* functions below.
     assert_bounds(x0, bounds)
     print_best = False
     print_all = print_best and False
@@ -120,6 +120,7 @@ class Spaceship:
         self.orbit = self.get_ast_orbit(ast_id)
         self.x = np.append(self.x, x)
         self.f += f
+        #print(f"f = {self.f}")
         self.maneuvers.append(maneuvers)
 
     def optimize(self, ast_id, instance, **kwargs):
@@ -273,7 +274,11 @@ class AsteroidRoutingProblem(Problem):
             return cost
         if free_wait:
             t0 = 0
-        return CommonProblem.f(cost, t0+t1)
+        f = CommonProblem.f(cost, t0+t1)
+        # if f < self.best_f:
+        #     self.best_f = f
+        #     print(f'New best:{f}:{cost}:{t0+t1}:[{t0}, {t1}]')
+        return f
 
     def evaluate_transfer(self, from_id, to_id, current_time, t0, t1, only_cost = False, free_wait = False):
         """Calculate objective function value of going from one asteroid to another departing at current_time + t0 and flying for a duration of t1. An asteroid ID of -1 denotes Earth."""
@@ -313,6 +318,7 @@ class AsteroidRoutingProblem(Problem):
     def optimize_transfer_orbit(self, from_orbit, to_orbit, current_time, t0_bounds, t1_bounds,
                                 only_cost = False, free_wait = False, multi = 1):
         """Here t0_bounds are relative to current_time and t1_bounds are relative to current_time + t0"""
+        #self.best_f = np.inf
         res = inner_minimize_multistart(lambda x: self._evaluate_transfer_orbit(from_orbit, to_orbit, current_time, x[0], x[1],
                                                                                 only_cost = only_cost, free_wait = free_wait),
                              multi = multi, bounds = (t0_bounds, t1_bounds))

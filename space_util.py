@@ -32,7 +32,7 @@ class Asteroids:
         self.ast_orbits = ast_orbits[ids].reset_index(drop=True)
 
     def get_orbit(self, ast_id):
-        return self.ast_orbits.loc[ast_id]
+        return self.ast_orbits.loc[ast_id].propagate(START_EPOCH)
 
 # Table 2 Constants and unit conversions
 AU = 1.49597870691e8 # km
@@ -125,6 +125,7 @@ def transfer_from_Earth(to_orbit, t0, t1, t2,
 def two_shot_transfer(from_orbit, to_orbit, t0, t1):
     assert t0 >= 0 and t1 > 0,f'It must be true that t0={t0} >= 0 and t1={t1} > 0'
     from_orbit = from_orbit.propagate(from_orbit.epoch + to_timedelta(t0))
+    #print(f'from_orbit.epoch: {from_orbit.epoch}')
     epoch = from_orbit.epoch + to_timedelta(t1)
     to_orbit = to_orbit.propagate(epoch)
     #assert epoch.value < LAST_EPOCH.value
