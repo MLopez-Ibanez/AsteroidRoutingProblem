@@ -91,8 +91,7 @@ def design_maxmindist(m, n, distance, budget = 1000, x0 = None):
   else:
     if not isinstance(x0, list):
       x0 = [ x0 ]
-    sample += x0
-    m -= len(sample) - 1
+    sample = x0
     
   while len(sample) < m:
     best = np.random.permutation(n)
