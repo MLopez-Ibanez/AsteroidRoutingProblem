@@ -1,26 +1,27 @@
 #!/bin/bash
 set -e
+set -u
 set -o pipefail
 
 # Find our own location.
 BINDIR=$(dirname "$(readlink -f "$(type -P $0 || echo $0)")")
+
 # This function launches one job $1 is the job name, the other arguments is the job to submit.
 qsub_job() {
-    PARALLEL_ENV=smp.pe
+    PARALLEL_ENV=amd.pe
     # We would like to use $BASHPID here, but OS X version of bash does not
     # support it.
     ALGO=$1
     OUTPUT=$2
     shift 2
     JOBNAME=${ALGO}-$counter-$$
-    qsub -v PATH <<EOF
+    qsub <<EOF
 #!/bin/bash --login
-#$ -t 1-$nruns
 #$ -N $JOBNAME
-# -pe $PARALLEL_ENV $NB_PARALLEL_PROCESS 
+#$ -pe $PARALLEL_ENV $nruns
 # -l ivybridge
 #$ -M manuel.lopez-ibanez@manchester.ac.uk
-#$ -m ase
+#$ -m s
 #      b     Mail is sent at the beginning of the job.
 #      e     Mail is sent at the end of the job.
 #      a     Mail is sent when the job is aborted or rescheduled.
@@ -29,10 +30,13 @@ qsub_job() {
 #$ -o $OUTDIR/${JOBNAME}.stdout
 #$ -j y
 #$ -cwd
-module load apps/anaconda3
-run=\$SGE_TASK_ID
-echo "running: ${BINDIR}/target-runner-${ALGO}.py $ALGO $counter-$$-r\$run \$run $@ --output ${OUTPUT}-r\$run"
-${BINDIR}/target-runner-${ALGO}.py $ALGO $counter-$$-r\$run \$run $@ --output "${OUTPUT}-r\$run"
+module load apps/binapps/anaconda3/2022.10
+source activate arp_env
+for run in \$(seq 1 $nruns); do
+    echo "running: ${BINDIR}/target-runner-${ALGO}.py $ALGO $counter-$$-r\$run \$run $@ --output ${OUTPUT}-r\$run"
+    ${BINDIR}/target-runner-${ALGO}.py $ALGO $counter-$$-r\$run \$run $@ --output ${OUTPUT}-r\$run&
+done
+wait
 EOF
 }
 
@@ -86,14 +90,14 @@ launch_local() {
     done
 }
 
-#LAUNCHER=qsub_job
-# OUTDIR="$SCRATCH/asteroides"
+LAUNCHER=qsub_job
+OUTDIR="$HOME/scratch/ijoc"
 # N_SLURM_CPUS=1
 # LAUNCHER=slurm_job
 
-OUTDIR="."
-N_LOCAL_CPUS=4
-LAUNCHER=launch_local
+#OUTDIR="."
+#N_LOCAL_CPUS=4
+#LAUNCHER=launch_local
 
 nruns=32
 
@@ -103,21 +107,12 @@ for n in 10 15 20 25 30; do
         INSTANCES="$INSTANCES arp_${n}_${seed}"
     done
 done
-# INSTANCES="
-# arp_10_42
-# #arp_15_42
-# #arp_20_42
-# "
 # Filter out
 INSTANCES=$(echo "$INSTANCES" | grep -v '#' | tr '\n' ' ')
 #echo $INSTANCES
 #exit 0
 
 budget="400"
-eval_ranks="0 1"
-#eval_ranks=1
-eval_ranks=0 # eval order
-
 # Actually, 10**budgetGA
 budgetGA=4
 
@@ -132,41 +127,20 @@ distances="kendall"
 
 counter=0
 for m in $budget; do
-for er in $eval_ranks; do
 for distance in $distances; do
 for init in $inits; do
 for instance in $INSTANCES; do
     counter=$((counter+1))
+    er=1
     RESULTS="$OUTDIR/results/m${m}-er${er}/$instance"
     mkdir -p "$RESULTS"
-    # #-learn_${learning}-samp_${sampling}"
-    # $LAUNCHER umm "${RESULTS}/umm-${init}" $instance --m_ini $m_ini --budget $m --init $init --eval_ranks $er 
-    # #--learning $learning --sampling $sampling --distance $distance
+    $LAUNCHER umm "${RESULTS}/umm-${init}" $instance --m_ini $m_ini --budget $m --init $init --eval_ranks $er 
+    er=0
+    RESULTS="$OUTDIR/results/m${m}-er${er}/$instance"
+    mkdir -p "$RESULTS"
     $LAUNCHER cego "${RESULTS}/cego-${init}" $instance --m_ini $m_ini --budgetGA $budgetGA --budget $m --init $init --eval_ranks $er
 done
 done
 done
 done
-done
 exit 0
-for m in $budget; do
-for instance in $INSTANCES; do
-    counter=$((counter+1))
-    RESULTS="$OUTDIR/results/m${m}/$instance"
-    mkdir -p "$RESULTS"
-    $LAUNCHER randomsearch "${RESULTS}/randomsearch" $instance
-done
-done
-
-# We only do 1 run for greedy
-nruns=1
-distances="euclidean energy"
-for instance in $INSTANCES; do
-for distance in $distances; do
-    counter=$((counter+1))
-    RESULTS="$OUTDIR/results/m1-er0/$instance"
-    mkdir -p "$RESULTS"
-    # $LAUNCHER greedynn "${RESULTS}/greedynn-${distance}" $instance --distance $distance
-done
-done
-
