@@ -6,9 +6,11 @@ import re
 import sys
 import numpy as np
 import pandas as pd
+from pathlib import Path
 
 if len(sys.argv) < 2:
-    res_dir = "./results/"
+    home = str(Path.home())
+    res_dir = home + "/scratch/ijoc/results/"
 else:
     res_dir = sys.argv[1]
 
@@ -52,4 +54,4 @@ for root, dirs, files in os.walk(res_dir):
         df.to_csv(res_file, index=False, compression = "xz")
         for run_file in to_delete:
             print(f"Deleting {run_file}")
-            os.remove(run_file)
+            #os.remove(run_file)
