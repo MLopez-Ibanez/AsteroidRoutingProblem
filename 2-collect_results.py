@@ -54,4 +54,4 @@ for root, dirs, files in os.walk(res_dir):
         df.to_csv(res_file, index=False, compression = "xz")
         for run_file in to_delete:
             print(f"Deleting {run_file}")
-            #os.remove(run_file)
+            os.remove(run_file)
