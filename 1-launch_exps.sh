@@ -18,7 +18,7 @@ qsub_job() {
 #$ -t 1-$nruns
 #$ -N $JOBNAME
 # -pe $PARALLEL_ENV $NB_PARALLEL_PROCESS 
-#$ -l ivybridge
+# -l ivybridge
 #$ -M manuel.lopez-ibanez@manchester.ac.uk
 #$ -m ase
 #      b     Mail is sent at the beginning of the job.
@@ -95,11 +95,11 @@ OUTDIR="."
 N_LOCAL_CPUS=4
 LAUNCHER=launch_local
 
-nruns=30
+nruns=32
 
 INSTANCES=""
-for n in $(seq 10 5 30); do
-    for seed in 42 73; do
+for n in 10 15 20 25 30; do
+    for seed in 8 22 42 59 73; do
         INSTANCES="$INSTANCES arp_${n}_${seed}"
     done
 done
@@ -116,7 +116,7 @@ INSTANCES=$(echo "$INSTANCES" | grep -v '#' | tr '\n' ' ')
 budget="400"
 eval_ranks="0 1"
 #eval_ranks=1
-eval_ranks=0
+eval_ranks=0 # eval order
 
 # Actually, 10**budgetGA
 budgetGA=4
@@ -124,8 +124,8 @@ budgetGA=4
 m_ini=10
 #inits="random"
 #inits="maxmindist"
-inits="maxmindist greedy_euclidean"
-#inits="greedy_euclidean"
+#inits="maxmindist greedy_euclidean"
+inits="greedy_euclidean"
 distances="kendall"
 #learning="exp"
 #sampling='log'
@@ -142,13 +142,13 @@ for instance in $INSTANCES; do
     # #-learn_${learning}-samp_${sampling}"
     # $LAUNCHER umm "${RESULTS}/umm-${init}" $instance --m_ini $m_ini --budget $m --init $init --eval_ranks $er 
     # #--learning $learning --sampling $sampling --distance $distance
-    #$LAUNCHER cego "${RESULTS}/cego-${init}" $instance --m_ini $m_ini --budgetGA $budgetGA --budget $m --init $init --eval_ranks $er
+    $LAUNCHER cego "${RESULTS}/cego-${init}" $instance --m_ini $m_ini --budgetGA $budgetGA --budget $m --init $init --eval_ranks $er
 done
 done
 done
 done
 done
-
+exit 0
 for m in $budget; do
 for instance in $INSTANCES; do
     counter=$((counter+1))
