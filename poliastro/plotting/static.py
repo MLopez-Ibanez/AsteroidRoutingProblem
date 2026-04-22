@@ -166,7 +166,7 @@ class StaticOrbitPlotter(BaseOrbitPlotter, Mixin2D):
         self._ax.legend(
             loc="upper left",
             bbox_to_anchor=(1.05, 1.015),
-            title="Names and epochs",
+            title="", #Names and epochs",
             numpoints=1,
         )
 
