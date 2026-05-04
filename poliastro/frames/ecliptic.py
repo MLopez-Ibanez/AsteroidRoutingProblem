@@ -14,10 +14,18 @@ from astropy.coordinates import (
 )
 from astropy.coordinates.builtin_frames.utils import DEFAULT_OBSTIME, get_jd12
 from astropy.coordinates.matrix_utilities import (
-    matrix_product,
     matrix_transpose,
     rotation_matrix,
 )
+
+try:
+    from astropy.coordinates.matrix_utilities import matrix_product
+except ImportError:
+    def matrix_product(*matrices):
+        res = matrices[0]
+        for m in matrices[1:]:
+            res = res @ m
+        return res
 
 from poliastro.frames.equatorial import GCRS
 
